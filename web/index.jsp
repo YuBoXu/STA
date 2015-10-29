@@ -83,14 +83,14 @@
 
     <div>
 
-      <div style="margin-top: 700px;font-family:微软雅黑;color: white;background: #1e75ba;height: 800px" data-am-scrollspy="{animation:'fade'}">
+      <div style="margin-top: 600px;font-family:微软雅黑;color: white;background: #1e75ba;height: 800px" data-am-scrollspy="{animation:'fade'}">
         <br/>
-        <h1 style="font-size: 80px;margin-top: 20px" data-am-scrollspy="{animation:'scale-down'}">在这里你能了解到各项软件赛事</h1>
-        <div style="width: 600px;height: 100px;background: #ff4cb8;margin-top: 80px;cursor: pointer" data-am-scrollspy="{animation:'slide-left'}">
+        <h1 style="font-size: 80px;margin-top: 20px" data-am-scrollspy="{animation:'scale-down'}">在这里你能了解到各项<span style="color: #8fd7dd;font-size: 90px">软件赛事</span></h1>
+        <div style="width: 600px;height: 100px;background: #e743a8;margin-top: 80px;cursor: pointer" data-am-scrollspy="{animation:'slide-left'}">
           <p style="font-size: 60px;color: white;text-align: center">软件创新大赛</p>
         </div>
 
-        <div style="width: 600px;height: 100px;background: #87ff00;float: right;cursor: pointer" data-am-scrollspy="{animation:'slide-right',delay: 200}">
+        <div style="width: 600px;height: 100px;background: #00a503;float: right;cursor: pointer" data-am-scrollspy="{animation:'slide-right',delay: 200}">
           <p style="font-size: 60px;color: white;text-align: center">ACM程序设计大赛</p>
         </div>
 
@@ -98,19 +98,31 @@
           <p style="font-size: 60px;color: white;text-align: center">服务外包大赛</p>
         </div>
 
-        <div style="width: 600px;height: 100px;background: #00ffd0;float: right;cursor: pointer" data-am-scrollspy="{animation:'slide-right',delay: 600}">
+        <div style="width: 600px;height: 100px;background: #00b48f;float: right;cursor: pointer" data-am-scrollspy="{animation:'slide-right',delay: 600}">
           <p style="font-size: 60px;color: white;text-align: center">花旗杯金融创新大赛</p>
         </div>
 
-        <div style="width: 600px;height: 100px;background: #535353;margin-top: 80px;cursor: pointer" data-am-scrollspy="{animation:'slide-left',delay: 800}">
+        <div style="width: 600px;height: 100px;background: #535353;margin-top: 80px;cursor: pointer" id="more" data-am-scrollspy="{animation:'slide-left',delay: 800}" data-am-offcanvas="{target: '#moreCon', effect: 'overlay'}">
           <p style="font-size: 60px;color: white;text-align: center">更多....</p>
+        </div>
+
+        <div id="moreCon" class="am-offcanvas">
+          <div class="am-offcanvas-bar">
+            <div class="am-offcanvas-content">
+              <p>
+                很多比赛 <br/>
+                很多比赛 <br/>
+                很多比赛
+              </p>
+            </div>
+          </div>
         </div>
 
     </div>
 
       <div style="font-family:微软雅黑;height: 800px">
         <br/>
-        <h1 style="font-size: 80px;margin-top: 20px" data-am-scrollspy="{animation:'scale-down'}">在这里你能认识到本院的各种大牛</h1>
+        <h1 style="font-size: 80px;margin-top: 20px" data-am-scrollspy="{animation:'scale-down'}">在这里你能拉到<span style="font-size: 90px;color: #c11a39">技术大牛</span></h1>
         <img src="img/2.jpg" width="600px" height="500px" style="float: right" data-am-scrollspy="{animation:'scale-down'}"/>
       </div>
 
@@ -123,24 +135,19 @@
         <div class="am-modal-dialog">
           <div class="am-modal-hd"></div>
 
-          <%--<div class="am-modal-bd">--%>
-            <%--来来来，输入你的学号--%>
-            <%--<input type="text" class="am-modal-prompt-input">--%>
-          <%--</div>--%>
-          <%--<div class="am-modal-bd">--%>
-            <%--不要停，还有你的密码--%>
-            <%--<input type="text" class="am-modal-prompt-input">--%>
-          <%--</div>--%>
-
-          <div class="am-form-group am-form-warning">
-            <label class="am-form-label" for="username">学号</label>
-            <input type="text" id="username" class="am-form-field am-modal-prompt-input">
-          </div>
-
-          <div class="am-form-group am-form-warning">
-            <label class="am-form-label" for="password">密码</label>
-            <input type="text" id="password" class="am-form-field am-modal-prompt-input">
-          </div>
+          <form action="" class="am-form" id="doc-vld-msg">
+            <fieldset>
+              <legend style="font-family:微软雅黑;color: #00a8e6"><span style="text-align: center;">来来来不要怕就是登个陆</span><button class="am-btn am-btn-warning am-btn-xs" style="position:absolute;margin-bottom: auto;margin-top: auto;margin-left: 15%">注册</button></legend>
+              <div class="am-form-group">
+                <label for="username">学号：</label>
+                <input type="text" id="username" pattern="^\d{10}$" placeholder="请输入学号(10位)" required/>
+              </div>
+              <div class="am-form-group">
+                <label for="password">密码：</label>
+                <input type="password" id="password" minlength="6" placeholder="请输入密码（至少6位)" required/>
+              </div>
+              </fieldset>
+            </form>
 
           <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>算了</span>
@@ -154,44 +161,41 @@
   </body>
 
 <script type="text/javascript">
-  $('#login').on('click', function() {
-    $('#my-prompt').modal({
-      relatedTarget: this,
-      onConfirm: function(e) {
-        alert('你输入的是：' + (e.data[0] + e.data[1]) || '')
-      },
-      onCancel: function(e) {
+    $('#login').on('click', function() {
+      var username = $("#username").val();
+      var password = $("#password").val();
+      $('#my-prompt').modal({
+        relatedTarget: this,
+        onConfirm: function(e) {
+          if(username.length == 10 && password.length >= 6)
+            alert(username + password);
+        },
+        onCancel: function(e) {
+          alert('算了');
+        }
+      });
+    });
 
+    $('#doc-vld-msg').validator({
+      onValid: function(validity) {
+        $(validity.field).closest('.am-form-group').find('.am-alert').hide();
+      },
+
+      onInValid: function(validity) {
+        var $field = $(validity.field);
+        var $group = $field.closest('.am-form-group');
+        var $alert = $group.find('.am-alert');
+        // 使用自定义的提示信息 或 插件内置的提示信息
+        var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+        if (!$alert.length) {
+          $alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+                  appendTo($group);
+        }
+
+        $alert.html(msg).show();
       }
     });
-  });
-
-  var setBlurOnLogin = function(){
-    $('#username').blur(function(e){
-      var username = $('#username').val();
-      if(username == ""){
-        $('#username').parent().replaceWith('<div class="am-form-group am-form-error"> <label class="am-form-label" for="username">您必须输入学号</label> <input type="text" id="username" class="am-form-field am-modal-prompt-input"> </div>')
-      }
-      else{
-        $('#username').parent().replaceWith('<div class="am-form-group am-form-success am-form-icon am-form-feedback"> <label class="am-form-label" for="username">学号</label> <input type="text" id="username" class="am-form-field am-modal-prompt-input"> <span class="am-icon-check"></span> </div>')
-        $('#username').val(username)
-      }
-    })
-
-    $('#password').blur(function(e){
-      var password = $('#password').val();
-      if(password == ""){
-        $('#password').parent().replaceWith('<div class="am-form-group am-form-error"> <label class="am-form-label" for="password">您必须输入密码</label> <input type="text" id="password" class="am-form-field am-modal-prompt-input"> </div>')
-      }
-      else{
-        $('#password').parent().replaceWith('<div class="am-form-group am-form-success am-form-icon am-form-feedback"> <label class="am-form-label" for="password">密码</label> <input type="text" id="password" class="am-form-field am-modal-prompt-input"> <span class="am-icon-check"></span> </div>')
-        $('#password').val(password)
-      }
-    })
-    setBlurOnLogin();
-  }
-
-  setBlurOnLogin();
 
 </script>
 
