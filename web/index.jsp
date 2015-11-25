@@ -11,23 +11,54 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
-    <script src="AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+    <script src="frame/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+    <script src="frame/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
     <script src="plugin/fullPage/jquery.fullpage.min.js"></script>
     <link rel="stylesheet" href="plugin/fullPage/jquery.fullpage.min.css">
-    <link rel="stylesheet" href="AmazeUI-2.4.2/assets/css/amazeui.min.css">
-    <link rel="stylesheet" href="AmazeUI-2.4.2/assets/css/app.css">
+    <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/app.css">
+    <link rel="stylesheet" href="css/button.css">
     <title>STA Home</title>
     <style type="text/css" rel="stylesheet">
-      .fp-tableCell {
-        position: fixed;
+      .fp-tableCell{
+        display: block;
       }
+
+      .fp-controlArrow{
+        border-color:white black !important;
+      }
+
+      @font-face {
+        font-family: title;
+        src: url("font/title.TTF");
+      }
+
+      .title{
+        font-family: title;
+        color: white;
+      }
+
+      .midContent{
+        position: absolute;
+        top: 25%;
+        text-align: center;
+        width: 100%
+      }
+
+      .bgImg{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+
     </style>
   </head>
   <body>
   <div id="fullpage">
+
     <div class="section active" id="section0">
-      <header class="am-topbar am-topbar-inverse am-animation-slide-top">
+      <header style="position: fixed;width: 100%" class="am-topbar am-topbar-inverse am-animation-slide-top">
         <h1 class="am-topbar-brand">
           <a href="#">CSU软院科协</a>
         </h1>
@@ -71,13 +102,26 @@
             <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="login">登录</button>
           </div>
         </div>
-
       </header>
+      <div style="height: 100%;width: 100%">
+        <img src="img/mainBg.jpg" class="bgImg"/>
+        <div class="midContent">
+          <h1 class="title" style="font-size: 50px;margin-top: 0px;margin-bottom: 0px">中南大学软件学院<br>科学技术协会</h1>
+          <p class="title" style="font-size: 20px;color: #efefef">为了正在进步的你</p>
+          <a class="button button-primary button-pill" style="margin-right: 5%;font-family: title;">了解我们</a>
+          <a class="button button-pill button-border" style="font-family: title;color: white">加入我们</a>
+        </div>
+      </div>
     </div>
-    <div class="section" id="section1"><h1>第二个页面</h1></div>
-    <div class="section" id="section2"><h1>第三个页面</h1></div>
-    <div class="section" id="section3"><h1>第四个页面r</h1></div>
 
+    <div class="section" id="section1">
+      <div class="slide">第二屏的第一屏</div>
+      <div class="slide">第二屏的第二屏</div>
+      <div class="slide">第二屏的第三屏</div>
+      <div class="slide">第二屏的第四屏</div>
+    </div>
+    <div class="section" id="section2"><h1>第三个页面</h1></div>
+    <div class="section" id="section3"><h1>第四个页面</h1></div>
   </div>
 
     <div>
