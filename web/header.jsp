@@ -12,7 +12,7 @@
   <script src="frame/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
   <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
 
-<header style="position: fixed;width: 100%;background:black;border-color: black" class="am-topbar am-topbar-inverse am-animation-slide-top">
+<div style="position: fixed;width: 100%;background:black;border-color: black;z-index: 200" class="am-topbar am-topbar-inverse am-animation-slide-top">
   <h1 class="am-topbar-brand">
     <a href="#">CSU软院科协</a>
   </h1>
@@ -65,7 +65,7 @@
     
   </div>
 
-</header>
+</div>
 
 
 <script type="text/javascript">

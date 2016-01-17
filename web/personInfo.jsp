@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +23,10 @@
 
   <style rel="stylesheet" type="text/css">
     body {
-      background: black;
-      margin: 0;
+      background: black !important;
+      margin: 0 !important;
+      width: 100%;
+      height: 100%;
     }
 
     .fullImg{
@@ -32,18 +35,68 @@
       height: 100vh;;
     }
 
+    @font-face {
+      font-family: content;
+      src: url("font/title.TTF");
+    }
+
+    .content{
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      color: white;
+      background: rgba(255,255,255,0.1);
+      width: 30%;
+      height: 60%;
+      padding-left: 2%;
+      padding-top: 2%;
+      padding-right: 2%;
+      font-family: content;
+      font-size: 20px;
+      border:2px solid;
+      border-radius:25px;
+      -moz-border-radius:25px;
+    }
+
+    #avatar{
+      width: 100px;
+      height: 100px;
+      -webkit-transition: width 2s, height 2s;
+      -moz-transition: width 2s, height 2s;
+      -ms-transition: width 2s, height 2s;
+      -o-transition: width 2s, height 2s;
+      transition: width 2s, height 2s;
+    }
+
+    #avatar:hover {
+      width: 150px;
+      height: 150px;
+    }
+
   </style>
+
 
 </head>
 <body>
 
-  <ul id="scene" class="scene">
+<%@include file="header.jsp"%>
+
+  <ul id="scene" style="padding: 0;margin: 0">
     <li class="layer fullImg" data-depth="0.20"><img src="img/personInfo/backStar.png"></li>
     <li class="layer fullImg" data-depth="0.40"><img src="img/personInfo/forwardStar.png"></li>
-    <li class="layer fullImg" data-depth="0.50"><img src="img/personInfo/leftLight.png"></li>
-    <li class="layer fullImg" data-depth="0.60"><img src="img/personInfo/rightLight.png"></li>
-    <li class="layer" data-depth="1.00"><img src="img/personInfo/arrow.png" style="top: 20%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></li>
+    <li class="layer fullImg" data-depth="0.60"><img src="img/personInfo/leftLight.png"></li>
+    <li class="layer fullImg" data-depth="0.80"><img src="img/personInfo/rightLight.png"></li>
+    <li class="layer" data-depth="0.00"><img src="img/personInfo/arrow.png" style="top: 25%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></li>
   </ul>
+
+  <div class="content">
+    <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png"></p>
+    <p>姓名：张然</p>
+    <p>班级：1304</p>
+    <p>秋秋：597699567</p>
+    <p>电话：15773181012</p>
+    <p>个人说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+  </div>
 
 
 
