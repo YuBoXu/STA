@@ -24,6 +24,7 @@
               <property name="annotatedClasses">
                      <list>
                             <value>domain.Test</value>
+                            <value>domain.User</value>
                      </list>
               </property>
               <property name="hibernateProperties">
@@ -39,7 +40,7 @@
               <property name="sessionFactory"><ref bean="sessionFactory"></ref></property>
        </bean>
 
-       <!--anto scan all component in these packages-->
+       <!--auto scan all component in these packages-->
        <context:annotation-config/>                         <!--make annotation useful-->
        <context:component-scan base-package="service"/>     <!--scan all component in service package-->
        <context:component-scan base-package="dao"/>         <!--scan all component in dao package-->

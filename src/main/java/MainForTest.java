@@ -1,7 +1,9 @@
 import domain.Test;
+import domain.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.TestService;
+import service.UserService;
 
 /**
  * Created by ZaraN on 2015/10/15.
@@ -9,20 +11,23 @@ import service.TestService;
  */
 public class MainForTest {
 
-    private TestService testService;
+    private UserService userService;
 
     public static void main(String[] args) {
-        Test test = new Test();
-        test.setUsername("66");
-        test.setPassword("55");
+        User user = new User();
+        user.setID(1);
+        user.setUsername("123");
+        user.setPassword("1234");
         MainForTest m = new MainForTest();
+
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        m.testService = (TestService)applicationContext.getBean("TestService");
+        m.userService = (UserService)applicationContext.getBean("UserService");
         try{
-            if(m.testService.addTest(test) > 0)
-                System.out.println("add successfully");
+            System.out.println(m.userService.getCount());
+            if(m.userService.login("123","1234"))
+                System.out.println("successfully");
             else
-                System.out.println("add fail");
+                System.out.println("fail");
         }catch (Exception e){
             e.printStackTrace();
         }
