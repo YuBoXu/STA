@@ -104,6 +104,8 @@
           </div>
           <input type="file" id="protrait">
         </div>
+        <label>你的头像</label>
+        <p style="text-align: center"><img src="img/avatar/avatar.png" style="width: 200px;height: 200px"/></p>
 
         <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
       </fieldset>
