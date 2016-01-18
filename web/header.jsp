@@ -73,12 +73,13 @@
 
 <script type="text/javascript">
 
-  $("#login").click(function(){
+  $("#logout").click(function(){
     $.ajax({
-      url:"/test",
+      url:"/testLogout",
       type:"post",
       success:function(data){
-        alert('h')
+        alert('注销成功');
+        window.location.href="index.jsp";
       }
     })
   })

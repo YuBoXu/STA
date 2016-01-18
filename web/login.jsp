@@ -50,7 +50,7 @@
   <div class="midContent">
     <h1 style="text-align: center;font-family: title,serif;font-size: 50px;color: white;margin-bottom: 5%">改变世界，从<span style="font-size: 60px;color: coral">现在</span>开始</h1>
     <div class="loginArea">
-      <form action="" class="am-form">
+      <form action="testLogin" class="am-form">
         <div class="am-form-group am-form-success am-form-icon am-form-feedback">
           <label class="am-form-label" for="username">请输入用户名</label>
           <input type="text" id="username" class="am-form-field">
@@ -61,7 +61,7 @@
           <input type="password" id="password" class="am-form-field">
           <span class="am-icon-check"></span>
         </div>
-        <button type="button" class="am-btn am-btn-warning am-btn-block">登陆</button>
+        <input type="submit" class="am-btn am-btn-warning am-btn-block"/>
         <a href="register.jsp"><button type="button" class="am-btn am-btn-secondary am-btn-block">注册</button></a>
       </form>
     </div>

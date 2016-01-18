@@ -47,10 +47,8 @@
       color: white;
       background: rgba(255,255,255,0.1);
       width: 30%;
-      height: 60%;
-      padding-left: 2%;
-      padding-top: 2%;
-      padding-right: 2%;
+      height: auto;
+      padding: 2%;
       font-family: content;
       font-size: 20px;
       border:2px solid;
@@ -96,11 +94,11 @@
 
   <div class="content">
     <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png"></p>
-    <p>姓名：<s:property value="#session.username"/></p>
-    <p>班级：<s:property value="#session.class"/></p>
-    <p>秋秋：<s:property value="#session.qq"/></p>
-    <p>手机：<s:property value="#session.tel"/></p>
-    <p>个人说明：<s:property value="#session.introduce"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">姓名</span>：<s:property value="#session.username"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">班级</span>：<s:property value="#session.class"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">QQ </span>：<s:property value="#session.qq"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">手机</span>：<s:property value="#session.tel"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">个人说明</span>：<br><s:property value="#session.introduce"/></p>
   </div>
 
 
