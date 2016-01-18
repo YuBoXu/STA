@@ -31,8 +31,8 @@
 
     .fullImg{
       position: fixed;
-      width: 100vh;
-      height: 100vh;;
+      width: 100%;
+      height: 100%;;
     }
 
     @font-face {
@@ -41,7 +41,7 @@
     }
 
     .content{
-      position: absolute;
+      position: fixed;
       top: 20%;
       left: 20%;
       color: white;
@@ -59,8 +59,8 @@
     }
 
     #avatar{
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       -webkit-transition: width 2s, height 2s;
       -moz-transition: width 2s, height 2s;
       -ms-transition: width 2s, height 2s;
@@ -69,8 +69,13 @@
     }
 
     #avatar:hover {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
+    }
+
+    p{
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
 
   </style>
@@ -81,21 +86,21 @@
 
 <%@include file="header.jsp"%>
 
-  <ul id="scene" style="padding: 0;margin: 0">
-    <li class="layer fullImg" data-depth="0.20"><img src="img/personInfo/backStar.png"></li>
-    <li class="layer fullImg" data-depth="0.40"><img src="img/personInfo/forwardStar.png"></li>
-    <li class="layer fullImg" data-depth="0.60"><img src="img/personInfo/leftLight.png"></li>
-    <li class="layer fullImg" data-depth="0.80"><img src="img/personInfo/rightLight.png"></li>
-    <li class="layer" data-depth="0.00"><img src="img/personInfo/arrow.png" style="top: 25%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></li>
+  <ul id="scene" style="padding: 0;margin: 0" class="fullImg">
+    <li class="layer fullImg" data-depth="0.20"><img src="img/personInfo/backStar.png" class="fullImg"></li>
+    <li class="layer fullImg" data-depth="0.40"><img src="img/personInfo/forwardStar.png" class="fullImg"></li>
+    <li class="layer fullImg" data-depth="0.60"><img src="img/personInfo/leftLight.png" class="fullImg"></li>
+    <li class="layer fullImg" data-depth="0.80"><img src="img/personInfo/rightLight.png" class="fullImg"></li>
+    <li class="layer fullImg" data-depth="0.00"><img src="img/personInfo/arrow.png" style="top: 20%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></li>
   </ul>
 
   <div class="content">
     <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png"></p>
-    <p>姓名：张然</p>
-    <p>班级：1304</p>
-    <p>秋秋：597699567</p>
-    <p>电话：15773181012</p>
-    <p>个人说明：啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+    <p>姓名：<s:property value="#session.username"/></p>
+    <p>班级：<s:property value="#session.class"/></p>
+    <p>秋秋：<s:property value="#session.qq"/></p>
+    <p>手机：<s:property value="#session.tel"/></p>
+    <p>个人说明：<s:property value="#session.introduce"/></p>
   </div>
 
 
@@ -108,12 +113,16 @@
 
 </body>
 <script>
+
   $("#more").on("mouseenter",function(event){
     $("#more").addClass('animated flash');
     setTimeout(function(){
       $('#more').removeClass('flash');
     }, 1000);
   })
+
+  $()
+
 </script>
 </html>
 

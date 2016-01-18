@@ -21,7 +21,7 @@
 
   <div class="am-collapse am-topbar-collapse am-animation-slide-top" id="doc-topbar-collapse">
     <ul class="am-nav am-nav-pills am-topbar-nav">
-      <li><a href="#">首页</a></li>
+      <li><a href="index.jsp">首页</a></li>
       <li><a href="#">来组团</a></li>
       <li><a href="#">下资源</a></li>
       <li><a href="#">听讲座</a></li>
@@ -54,12 +54,12 @@
     
     <s:if test="%{#session.username==null}">
     <div class="am-topbar-right">
-      <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="login" >登录</button>
+      <a href="login.jsp"><button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="login">登录</button></a>
     </div>
     </s:if>
     <s:else>
       <div class="am-topbar-right">
-        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="info" >欢迎,<s:property value="#session.username"/></button>
+        <a href="personInfo.jsp"><button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="info" >欢迎,<s:property value="#session.username"/></button></a>
       </div>
     </s:else>
     
