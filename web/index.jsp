@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
     <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/app.css">
     <link rel="stylesheet" href="css/button.css">
-    <title>STA Home</title>
+    <title>软院科协-从这里，改变世界</title>
     <style type="text/css" rel="stylesheet">
       @font-face {
         font-family: title;

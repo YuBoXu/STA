@@ -13,7 +13,7 @@
 
   <meta charset="utf-8">
 
-  <title>Parallax.js | jQuery Example</title>
+  <title>个人信息页面</title>
 
   <!-- Behavioral Meta Data -->
   <meta name="apple-mobile-web-app-capable" content="yes">
