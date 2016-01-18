@@ -46,7 +46,7 @@
       <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
         <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
         <ul class="am-dropdown-content">
-          <li><a href="#">注册</a></li>
+          <li><a href="register.jsp">注册</a></li>
           <li><a href="#">随便看看</a></li>
         </ul>
       </div>
@@ -60,6 +60,9 @@
     <s:else>
       <div class="am-topbar-right">
         <a href="personInfo.jsp"><button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="info" >欢迎,<s:property value="#session.username"/></button></a>
+      </div>
+      <div class="am-topbar-right">
+        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" id="logout">注销</button>
       </div>
     </s:else>
     

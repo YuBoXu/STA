@@ -53,7 +53,7 @@
 
   <body>
 
-  <jsp:include page="header.jsp"></jsp:include>
+  <%@include file="header.jsp"%>
 
   <div style="height: 100%;width: 100%">
     <img src="img/main/mainBg2.png" class="bgImg" id="bg"/>
