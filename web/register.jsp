@@ -104,8 +104,8 @@
           </div>
           <input type="file" id="protrait">
         </div>
-        <label>你的头像</label>
-        <p style="text-align: center"><img src="img/avatar/avatar.png" style="width: 200px;height: 200px"/></p>
+        <label>你的头像</label><br>
+        <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png" style="width: 200px;height: 200px"/></p>
 
         <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
       </fieldset>
@@ -114,4 +114,26 @@
 </div>
 
 </body>
+<script>
+  $("#protrait").change(function(){
+    var objUrl = getObjectURL(this.files[0]) ;
+    console.log("objUrl = "+objUrl) ;
+    if (objUrl) {
+      $("#avatar").attr("src", objUrl) ;
+    }
+  }) ;
+
+  function getObjectURL(file) {
+    var url = null ;
+    if (window.createObjectURL!=undefined) {
+      url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) {       // mozilla(firefox)
+      url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+      url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+  }
+
+</script>
 </html>
