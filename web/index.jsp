@@ -137,11 +137,6 @@
   </body>
 
 <script type="text/javascript">
-
-  $(document).ready(function(){
-    $('#fullPage').fullpage();
-  })
-
   $("#joinUs").on("mouseenter",function(){
     $("#joinUs").css("color","#00a8e6")
   })
