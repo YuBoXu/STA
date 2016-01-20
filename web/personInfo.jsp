@@ -32,7 +32,7 @@
     .fullImg{
       position: fixed;
       width: 100%;
-      height: 100%;;
+      height: 100%;
     }
 
     @font-face {
@@ -118,8 +118,6 @@
       $('#more').removeClass('flash');
     }, 1000);
   })
-
-  $()
 
 </script>
 </html>
