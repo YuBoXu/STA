@@ -102,6 +102,7 @@
       <div class="halfWindow">
         <h1 class="funcDes" style="margin-top: 35%;color: white" data-am-scrollspy="{animation:'scale-down'}">在这里你可以</h1>
         <h1 class="funcDes" style="color: white" data-am-scrollspy="{animation:'scale-down',delay: 300}">拓宽你的人脉，找到<span style="font-size: 60px">大牛</span></h1>
+        <h1 style="text-align: center"><a class="button button-3d" style="font-family: title;" data-am-scrollspy="{animation:'scale-down',delay: 400}">去寻找</a></h1>
       </div>
       <div class="halfWindow" style="cursor: pointer">
         <div id="particles-js" style="width: 100%;height: 100vh">
@@ -145,7 +146,7 @@
         <h1 class="funcDes" style="font-size: 60px">提升自己，改变世界</h1>
         <p style="width: 60%;margin-left: auto;margin-right: auto;margin-bottom: 0px;font-family: title;font-size: 20px">
           中南大学软件学院大学生科学技术协会（以下简称“科协”）成立于2010年，是我院大学生自主创新的领导机构，是软件学院三大学生机构之一，以“自我管理、自我教育、自我创新”为协会的管理理念，从实际出发，激发大学生自主学习、自主创新是科协的宗旨，以发展与传承科协的文化为任务，实现我院科协繁荣昌盛。
-          <span class="am-icon-graduation-cap"></span>
+          <span class="am-icon-graduation-cap" data-am-scrollspy="{animation:'scale-up'}"></span>
         </p>
       </div>
     </div>
