@@ -78,6 +78,7 @@
         padding-left: 10%;
         line-height: 15vh;
         cursor: pointer;
+        font-family: title;
       }
 
     </style>
@@ -138,12 +139,20 @@
       </div>
     </div>
 
-    <div style="width: 100%;height: auto">
-      <h1 class="funcDes">从这里开始</h1>
-      <h1 class="funcDes" style="font-size: 60px">提升自己，改变世界</h1>
+    <div style="width: 100%;height: auto;background:  #d3d3d3;color: #000000">
+      <div style="padding-top: 20vh;padding-bottom: 20vh">
+        <h1 class="funcDes">从这里开始</h1>
+        <h1 class="funcDes" style="font-size: 60px">提升自己，改变世界</h1>
+        <p style="width: 60%;margin-left: auto;margin-right: auto;margin-bottom: 0px;font-family: title;font-size: 20px">
+          中南大学软件学院大学生科学技术协会（以下简称“科协”）成立于2010年，是我院大学生自主创新的领导机构，是软件学院三大学生机构之一，以“自我管理、自我教育、自我创新”为协会的管理理念，从实际出发，激发大学生自主学习、自主创新是科协的宗旨，以发展与传承科协的文化为任务，实现我院科协繁荣昌盛。
+          <span class="am-icon-graduation-cap"></span>
+        </p>
+      </div>
     </div>
 
   </div>
+
+  <%@include file="footer.jsp"%>
 
   </body>
 
