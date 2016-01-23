@@ -10,44 +10,56 @@
                            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
                            http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-       <!--jdbc prop-->
-       <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"
-             p:driverClass="com.mysql.jdbc.Driver"
-             p:jdbcUrl="jdbc:mysql://localhost:3306/test"
-             p:user="root"
-             p:password="root">
-       </bean>
+    <!--jdbc prop-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"
+          p:driverClass="com.mysql.jdbc.Driver"
+          p:jdbcUrl="jdbc:mysql://localhost:3306/sat"
+          p:user="root"
+          p:password="root">
+    </bean>
 
-       <!--the configuration of sessionFactory-->
-       <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
-             p:dataSource-ref="dataSource">
-              <property name="annotatedClasses">
-                     <list>
-                            <value>domain.Test</value>
-                            <value>domain.User</value>
-                     </list>
-              </property>
-              <property name="hibernateProperties">
-                     <props>
-                            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-                            <prop key="hibernate.hbm2ddl.auto">update</prop>
-                     </props>
-              </property>
-       </bean>
+    <!--the configuration of sessionFactory-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+          p:dataSource-ref="dataSource">
+        <property name="annotatedClasses">
+            <list>
+                <value>domain.Test</value>
+                <value>domain.User</value>
+                <value>domain.Person</value>
+                <value>domain.Competition</value>
+                <value>domain.Department</value>
+                <value>domain.Lecture</value>
+                <value>domain.Resource</value>
+                <value>domain.Team</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
 
-       <!--the configuration of transaction manager-->
-       <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-              <property name="sessionFactory"><ref bean="sessionFactory"></ref></property>
-       </bean>
+    <!--the configuration of transaction manager-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"></ref>
+        </property>
+    </bean>
 
-       <!--auto scan all component in these packages-->
-       <context:annotation-config/>                         <!--make annotation useful-->
-       <context:component-scan base-package="service"/>     <!--scan all component in service package-->
-       <context:component-scan base-package="dao"/>         <!--scan all component in dao package-->
-       <context:component-scan base-package="domain"/>      <!--scan all component in domain package-->
-       <context:spring-configured/>
-       <tx:annotation-driven/>
-       <cache:annotation-driven />
+    <!--auto scan all component in these packages-->
+    <context:annotation-config/>
+    <!--make annotation useful-->
+    <context:component-scan base-package="service"/>
+    <!--scan all component in service package-->
+    <context:component-scan base-package="dao"/>
+    <!--scan all component in dao package-->
+    <context:component-scan base-package="domain"/>
+    <!--scan all component in domain package-->
+    <context:spring-configured/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <cache:annotation-driven/>
 
 
 </beans>

@@ -1,3 +1,4 @@
+<%@ page import="domain.Person" %>
 <%--
   Created by IntelliJ IDEA.
   User: ZaraN
@@ -66,6 +67,10 @@
       transition: width 2s, height 2s;
     }
 
+    #avatar{
+      border-radius: 40px;
+    }
+
     #avatar:hover {
       width: 100px;
       height: 100px;
@@ -93,12 +98,14 @@
   </ul>
 
   <div class="content">
-    <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png"></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">姓名</span>：<s:property value="#session.username"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">班级</span>：<s:property value="#session.class"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">QQ </span>：<s:property value="#session.qq"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">手机</span>：<s:property value="#session.tel"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">个人说明</span>：<br><s:property value="#session.introduce"/></p>
+    <p style="text-align: center"><img id="avatar" src="<%=request.getContextPath() +"/"+ ((Person)session.getAttribute("person")).getProtrait()%>"></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">姓名</span>：<s:property value="#session.person.name"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">班级</span>：<s:property value="#session.person.classes"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">QQ </span>：<s:property value="#session.person.qq"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">手机</span>：<s:property value="#session.person.tel"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">个人说明</span>：<br><s:property value="#session.person.introduce"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">兴趣爱好</span>：<br><s:property value="#session.person.hobby"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">个人特长</span>：<br><s:property value="#session.person.speciality"/></p>
   </div>
 
 
