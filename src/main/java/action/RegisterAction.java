@@ -40,8 +40,16 @@ public class RegisterAction extends ActionSupport implements ServletRequestAware
     private String portraitContentType;
 
     @Action(value = "register", results = {
-            @Result(name = ActionSupport.SUCCESS, location = "/personInfo.jsp")})
+            /*用户注册成功，跳转到用户信息界面*/
+            @Result(name = ActionSupport.SUCCESS, location = "/personInfo.jsp"),
+            /*用户名已存在，什么事也不干，直接跳转到用户信息界面*/
+            @Result(name = ActionSupport.NONE, location = "/personInfo.jsp")})
     public String register() throws ServletException, IOException {
+
+        if (personService.isUsernameExist(person.getAccount())){
+            return ActionSupport.NONE;
+        }
+
         if (portrait != null) {
             /*System.out.println(portrait == null);//判断头像文件是否为空
             System.out.println(portraitFileName);//查看上传的图片的名称(包括文件类型，比如helloman.jpg)
@@ -65,7 +73,9 @@ public class RegisterAction extends ActionSupport implements ServletRequestAware
             /*System.out.println("protrait" + person.getProtrait());
             System.out.println("文件上传成功：" + saveFile.getAbsolutePath());*/
         }
-
+        else{
+            person.setProtrait("img/avatar/avatar.png");
+        }
         personService.registerPerson(person);//将用户数据持久化
         session.put("person", person);
         return SUCCESS;
