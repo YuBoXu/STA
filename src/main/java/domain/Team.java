@@ -7,7 +7,7 @@ import java.util.Set;
  * Created by martsforever on 2016/1/14.
  */
 @Entity
-@Table(name = "team", catalog = "sat")
+@Table(name = "team", catalog = "sta")
 public class Team {
 
     private int id;

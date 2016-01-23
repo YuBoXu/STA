@@ -13,7 +13,7 @@
     <!--jdbc prop-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"
           p:driverClass="com.mysql.jdbc.Driver"
-          p:jdbcUrl="jdbc:mysql://localhost:3306/sat"
+          p:jdbcUrl="jdbc:mysql://localhost:3306/sta"
           p:user="root"
           p:password="root">
     </bean>
