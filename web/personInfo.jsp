@@ -103,9 +103,9 @@
     <p><span style="text-shadow: 2px 2px 2px white;">班级</span>：<s:property value="#session.person.classes"/></p>
     <p><span style="text-shadow: 2px 2px 2px white;">QQ </span>：<s:property value="#session.person.qq"/></p>
     <p><span style="text-shadow: 2px 2px 2px white;">手机</span>：<s:property value="#session.person.tel"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">兴趣爱好</span>：<s:property value="#session.person.hobby"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">个人特长</span>：<s:property value="#session.person.speciality"/></p>
     <p><span style="text-shadow: 2px 2px 2px white;">个人说明</span>：<br><s:property value="#session.person.introduce"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">兴趣爱好</span>：<br><s:property value="#session.person.hobby"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">个人特长</span>：<br><s:property value="#session.person.speciality"/></p>
   </div>
 
 

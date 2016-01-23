@@ -25,7 +25,7 @@
     <div class="am-collapse am-topbar-collapse am-animation-slide-top" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
             <li><a href="index.jsp">首页</a></li>
-            <li><a href="#">来组团</a></li>
+            <li><a href="groupList.jsp">来组团</a></li>
             <li><a href="#">下资源</a></li>
             <li><a href="#">听讲座</a></li>
             <li class="am-dropdown" data-am-dropdown>

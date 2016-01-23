@@ -102,7 +102,7 @@
       <div class="halfWindow">
         <h1 class="funcDes" style="margin-top: 35%;color: white" data-am-scrollspy="{animation:'scale-down'}">在这里你可以</h1>
         <h1 class="funcDes" style="color: white" data-am-scrollspy="{animation:'scale-down',delay: 300}">拓宽你的人脉，找到<span style="font-size: 60px">大牛</span></h1>
-        <h1 style="text-align: center"><a class="button button-3d" style="font-family: title;" data-am-scrollspy="{animation:'scale-down',delay: 400}">去寻找</a></h1>
+        <h1 style="text-align: center"><a href="groupList.jsp" class="button button-3d" style="font-family: title;" data-am-scrollspy="{animation:'scale-down',delay: 400}">去寻找</a></h1>
       </div>
       <div class="halfWindow" style="cursor: pointer">
         <div id="particles-js" style="width: 100%;height: 100vh">
