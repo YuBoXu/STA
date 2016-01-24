@@ -14,12 +14,12 @@ import java.util.List;
 @Component
 public class ResourceDaoHibernate4 extends BaseDaoHibernate4<Resource> implements ResourceDAO {
     @Override
-    public void addOneResource(Resource resource) {
+    public void add(Resource resource) {
         super.save(resource);
     }
 
     @Override
-    public Resource retriveResourceByName(String name) {
+    public Resource retriveByName(String name) {
         Session session = getSessionFactory().getCurrentSession();
         Query query = session.createQuery("from Resource where name = ?");
         query.setString(0, name);
@@ -30,7 +30,7 @@ public class ResourceDaoHibernate4 extends BaseDaoHibernate4<Resource> implement
     }
 
     @Override
-    public List<Resource> retriveAllResource() {
+    public List<Resource> retriveAll() {
         Session session = getSessionFactory().getCurrentSession();
         Query query = session.createQuery("from Resource");
         List<Resource> resources = query.list();
@@ -38,12 +38,12 @@ public class ResourceDaoHibernate4 extends BaseDaoHibernate4<Resource> implement
     }
 
     @Override
-    public void updateResource(Resource resource) {
+    public void update(Resource resource) {
         super.update(resource);
     }
 
     @Override
-    public void deleteResource(Resource resource) {
+    public void delete(Resource resource) {
         super.delete(resource);
     }
 }

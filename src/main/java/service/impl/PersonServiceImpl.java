@@ -17,23 +17,23 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person login(String account, String password) {
-        return personDao.findPersonByAccountAndPassword(account, password);
+        return personDao.retriveByAccountAndPassword(account, password);
     }
 
     @Override
     public Person getPerson(String account) {
-        return personDao.findPersonByAccount(account);
+        return personDao.retriveByAccount(account);
     }
 
     @Override
     public void registerPerson(Person person) {
-        personDao.addPerson(person);
+        personDao.add(person);
     }
 
     @Override
     public boolean isUsernameExist(String name) {
         Boolean isExist = false;
-        Person person = personDao.findPersonByAccount(name);
+        Person person = personDao.retriveByAccount(name);
         if (person == null) isExist = false;
         else isExist = true;
         return isExist;

@@ -14,14 +14,14 @@ import java.util.List;
 @Component("PersonDaoHibernate4")
 public class PersonDaoHibernate4 extends BaseDaoHibernate4<Person> implements PersonDao {
     @Override
-    public void addPerson(Person person) {
+    public void add(Person person) {
         super.save(person);
     }
 
     @Override
-    public Person findPersonByAccount(String account) {
+    public Person retriveByAccount(String account) {
 
-        Session session = getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Person where account = ?");
         query.setString(0, account);
 
@@ -34,10 +34,10 @@ public class PersonDaoHibernate4 extends BaseDaoHibernate4<Person> implements Pe
     }
 
     @Override
-    public Person findPersonByAccountAndPassword(String account, String password) {
+    public Person retriveByAccountAndPassword(String account, String password) {
         Person person = null;
 
-        Session session = getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Person where account = ? and password = ?");
         query.setString(0, account);
         query.setString(1, password);
@@ -50,8 +50,8 @@ public class PersonDaoHibernate4 extends BaseDaoHibernate4<Person> implements Pe
     }
 
     @Override
-    public List<Person> findPersonByName(String name) {
-        Session session = getSessionFactory().getCurrentSession();
+    public List<Person> retriveByName(String name) {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Person where name like ?");//from PersonInfo where name = ?XXX
         query.setString(0, "%" + name + "%");//这里是模糊查询，表示查询名字里面只要有这个名字就算一个查询结果
         List<Person> persons = query.list();
@@ -61,8 +61,8 @@ public class PersonDaoHibernate4 extends BaseDaoHibernate4<Person> implements Pe
     }
 
     @Override
-    public List<Person> findAllPerson() {
-        Session session = getSessionFactory().getCurrentSession();
+    public List<Person> retriveAll() {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Person");
         List<Person> persons = query.list();
         if (persons.size() > 0)
@@ -71,17 +71,17 @@ public class PersonDaoHibernate4 extends BaseDaoHibernate4<Person> implements Pe
     }
 
     @Override
-    public void updatePerson(Person person) {
+    public void update(Person person) {
         super.update(person);
     }
 
     @Override
-    public void deletePerson(Person person) {
+    public void delete(Person person) {
         super.delete(person);
     }
 
     @Override
-    public Person retrivePersonById(int id) {
+    public Person retriveById(int id) {
         return super.get(Person.class, id);
     }
 }

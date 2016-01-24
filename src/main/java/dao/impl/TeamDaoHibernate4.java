@@ -14,13 +14,13 @@ import java.util.List;
 @Component
 public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDAO {
     @Override
-    public void addTeam(Team team) {
+    public void add(Team team) {
         super.save(team);
     }
 
     @Override
-    public Team findTeamByTeamName(String name) {
-        Session session = getSessionFactory().getCurrentSession();
+    public Team retriveByName(String name) {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Team where name = ?");
         query.setString(0, name);
         List<Team> teams = query.list();
@@ -29,20 +29,20 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
     }
 
     @Override
-    public List<Team> findAllTeam() {
-        Session session = getSessionFactory().getCurrentSession();
+    public List<Team> retriveAll() {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Team");
         List<Team> teams = query.list();
         return teams;
     }
 
     @Override
-    public void updateTeam(Team team) {
+    public void update(Team team) {
         super.update(team);
     }
 
     @Override
-    public void deleteTeam(Team team) {
+    public void delete(Team team) {
         super.delete(team);
     }
 }

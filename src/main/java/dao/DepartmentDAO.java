@@ -15,7 +15,7 @@ public interface DepartmentDAO extends BaseDao<Department> {
      *
      * @param department
      */
-    public void addDepartment(Department department);
+    public void add(Department department);
 
     /**
      * 根据部门名称查找部门信息
@@ -23,27 +23,27 @@ public interface DepartmentDAO extends BaseDao<Department> {
      * @param name
      * @return
      */
-    public Department findDepartmentByName(String name);
+    public Department retriveByName(String name);
 
     /**
      * 查找所有的部门部门信息
      *
      * @return
      */
-    public List<Department> findAllDepartment();
+    public List<Department> retriveAll();
 
     /**
      * 更新一个部门的信息
      *
      * @param department
      */
-    public void updateDepartment(Department department);
+    public void update(Department department);
 
     /**
      * 删除一个部门
      *
      * @param department
      */
-    public void deleteDepartment(Department department);
+    public void delete(Department department);
 
 }

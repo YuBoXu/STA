@@ -14,12 +14,12 @@ import java.util.List;
 @Component
 public class CompetitionDaoHibernate4 extends BaseDaoHibernate4<Competition> implements CompetitionDAO {
     @Override
-    public void addOneCompetition(Competition competition) {
+    public void add(Competition competition) {
         super.save(competition);
     }
 
     @Override
-    public Competition retriveOneCompetitionByName(String name) {
+    public Competition retriveByName(String name) {
         Session session = getSessionFactory().getCurrentSession();
         Query query = session.createQuery("from Competition where name = ?");
         query.setString(0, name);
@@ -30,7 +30,7 @@ public class CompetitionDaoHibernate4 extends BaseDaoHibernate4<Competition> imp
     }
 
     @Override
-    public List<Competition> getAllCompetitionInfo() {
+    public List<Competition> retriveAll() {
         Session session = getSessionFactory().getCurrentSession();
         Query query = session.createQuery("from Competition");
         List<Competition> competitions = query.list();
@@ -38,12 +38,12 @@ public class CompetitionDaoHibernate4 extends BaseDaoHibernate4<Competition> imp
     }
 
     @Override
-    public void updateCompetition(Competition competition) {
+    public void update(Competition competition) {
         super.update(competition);
     }
 
     @Override
-    public void deleteCompetition(Competition competition) {
+    public void delete(Competition competition) {
         super.delete(competition);
     }
 }

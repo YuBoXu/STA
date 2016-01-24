@@ -16,7 +16,7 @@ public interface LectureDAO extends BaseDao<Lecture>{
      *
      * @param lecture
      */
-    public void addLecture(Lecture lecture);
+    public void add(Lecture lecture);
 
     /**
      * 根据讲座名称查找讲座信息
@@ -24,27 +24,27 @@ public interface LectureDAO extends BaseDao<Lecture>{
      * @param name
      * @return
      */
-    public Lecture findLectureByName(String name);
+    public Lecture retriveByName(String name);
 
     /**
      * 查找所有讲座的信息
      *
      * @return
      */
-    public List<Lecture> findAllLecture();
+    public List<Lecture> retriveAll();
 
     /**
      * 更新一个讲座的信息
      *
      * @param lecture
      */
-    public void updateLecture(Lecture lecture);
+    public void update(Lecture lecture);
 
     /**
      * 删除一个讲座信息
      *
      * @param lecture
      */
-    public void deletelecture(Lecture lecture);
+    public void delete(Lecture lecture);
 
 }

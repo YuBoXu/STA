@@ -9,20 +9,20 @@ import java.util.List;
  * Created by martsforever on 2016/1/14.
  */
 @Component
-public interface PersonDao {
+public interface PersonDao extends BaseDao<Person> {
     /**
      * 添加一个会员信息
      *
      * @param person
      */
-    public void addPerson(Person person);
+    public void add(Person person);
 
     /**
      * 根据会员账号查找会员信息
      *
      * @param account
      */
-    public Person findPersonByAccount(String account);
+    public Person retriveByAccount(String account);
 
 
     /**根据用户名以及密码查找用户信息
@@ -30,7 +30,7 @@ public interface PersonDao {
      * @param password
      * @return
      */
-    public Person findPersonByAccountAndPassword(String account, String password);
+    public Person retriveByAccountAndPassword(String account, String password);
 
     /**
      * 根据会员名称查找会员信息
@@ -38,31 +38,31 @@ public interface PersonDao {
      * @param name
      * @return
      */
-    public List<Person> findPersonByName(String name);
+    public List<Person> retriveByName(String name);
 
     /**
      * 查找所有会员的信息
      *
      * @return
      */
-    public List<Person> findAllPerson();
+    public List<Person> retriveAll();
 
     /**
      * 更新一个会员的信息
      *
      * @param person
      */
-    public void updatePerson(Person person);
+    public void update(Person person);
 
     /**
      * 删除一个会员的信息
      *
      * @param person
      */
-    public void deletePerson(Person person);
+    public void delete(Person person);
 
     /**根据会员id查找会员信息
      * @param id
      */
-    public Person retrivePersonById(int id);
+    public Person retriveById(int id);
 }

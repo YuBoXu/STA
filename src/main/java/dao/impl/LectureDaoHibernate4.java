@@ -14,13 +14,13 @@ import java.util.List;
 @Component
 public class LectureDaoHibernate4 extends BaseDaoHibernate4<Lecture> implements LectureDAO {
     @Override
-    public void addLecture(Lecture lecture) {
+    public void add(Lecture lecture) {
         super.save(lecture);
     }
 
     @Override
-    public Lecture findLectureByName(String name) {
-        Session session = getSessionFactory().getCurrentSession();
+    public Lecture retriveByName(String name) {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Lecture where name = ?");
         query.setString(0, name);
         List<Lecture> lectures = query.list();
@@ -29,20 +29,20 @@ public class LectureDaoHibernate4 extends BaseDaoHibernate4<Lecture> implements 
     }
 
     @Override
-    public List<Lecture> findAllLecture() {
-        Session session = getSessionFactory().getCurrentSession();
+    public List<Lecture> retriveAll() {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Lecture");
         List<Lecture> lectures = query.list();
         return lectures;
     }
 
     @Override
-    public void updateLecture(Lecture lecture) {
+    public void update(Lecture lecture) {
         super.update(lecture);
     }
 
     @Override
-    public void deletelecture(Lecture lecture) {
+    public void delete(Lecture lecture) {
         super.delete(lecture);
     }
 }

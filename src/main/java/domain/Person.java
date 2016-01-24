@@ -209,7 +209,7 @@ public class Person {
     }
 
 
-    @ManyToMany(mappedBy = "personList", cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "personList", cascade = CascadeType.MERGE)
     public Set<Team> getTeamList() {
         return teamList;
     }
@@ -218,7 +218,7 @@ public class Person {
         this.teamList = teamList;
     }
 
-    @ManyToMany(mappedBy = "menberList", cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "menberList", cascade = CascadeType.MERGE)
     public Set<Department> getDepartments() {
         return departments;
     }
@@ -227,7 +227,7 @@ public class Person {
         this.departments = departments;
     }
 
-    @ManyToMany(mappedBy = "personList", cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "personList", cascade = CascadeType.MERGE)
     public Set<Lecture> getLectures() {
         return lectures;
     }

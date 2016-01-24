@@ -14,13 +14,13 @@ import java.util.List;
 @Component
 public class DepartmentDaoHibernate4 extends BaseDaoHibernate4<Department> implements DepartmentDAO {
     @Override
-    public void addDepartment(Department department) {
+    public void add(Department department) {
         super.save(department);
     }
 
     @Override
-    public Department findDepartmentByName(String name) {
-        Session session = getSessionFactory().getCurrentSession();
+    public Department retriveByName(String name) {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Department where name = ?");
         query.setString(0, name);
         List<Department> departments = query.list();
@@ -29,20 +29,20 @@ public class DepartmentDaoHibernate4 extends BaseDaoHibernate4<Department> imple
     }
 
     @Override
-    public List<Department> findAllDepartment() {
-        Session session = getSessionFactory().getCurrentSession();
+    public List<Department> retriveAll() {
+        Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Department");
         List<Department> departments = query.list();
         return departments;
     }
 
     @Override
-    public void updateDepartment(Department department) {
+    public void update(Department department) {
         super.update(department);
     }
 
     @Override
-    public void deleteDepartment(Department department) {
+    public void delete(Department department) {
         super.delete(department);
     }
 }
