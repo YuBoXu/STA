@@ -326,7 +326,7 @@
                         <small id="telValidator"></small>
                     </label><span id="telValidate" name="validate"
                                   class="am-icon-warning"></span>
-                    <input type="email" class="" name="person.tel" id="tel" placeholder="输入电话号码"
+                    <input type="text" class="" name="person.tel" id="tel" placeholder="输入电话号码"
                            onblur="checkTelIsLegal()">
                 </div>
 
