@@ -23,8 +23,6 @@
           p:dataSource-ref="dataSource">
         <property name="annotatedClasses">
             <list>
-                <value>domain.Test</value>
-                <value>domain.User</value>
                 <value>domain.Person</value>
                 <value>domain.Competition</value>
                 <value>domain.Department</value>
@@ -60,6 +58,4 @@
     <context:spring-configured/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <cache:annotation-driven/>
-
-
 </beans>

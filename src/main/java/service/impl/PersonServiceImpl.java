@@ -21,21 +21,26 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person getPerson(String account) {
+    public Person retriveByAccount(String account) {
         return personDao.retriveByAccount(account);
     }
 
     @Override
-    public void registerPerson(Person person) {
+    public void register(Person person) {
         personDao.add(person);
     }
 
     @Override
-    public boolean isUsernameExist(String name) {
+    public boolean isAccountExist(String name) {
         Boolean isExist = false;
         Person person = personDao.retriveByAccount(name);
         if (person == null) isExist = false;
         else isExist = true;
         return isExist;
+    }
+
+    @Override
+    public Person retriveById(int id) {
+        return personDao.retriveById(id);
     }
 }

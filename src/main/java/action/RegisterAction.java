@@ -46,7 +46,7 @@ public class RegisterAction extends ActionSupport implements ServletRequestAware
             @Result(name = ActionSupport.NONE, location = "/personInfo.jsp")})
     public String register() throws ServletException, IOException {
 
-        if (personService.isUsernameExist(person.getAccount())){
+        if (personService.isAccountExist(person.getAccount())){
             return ActionSupport.NONE;
         }
 
@@ -76,7 +76,7 @@ public class RegisterAction extends ActionSupport implements ServletRequestAware
         else{
             person.setProtrait("img/avatar/avatar.png");
         }
-        personService.registerPerson(person);//将用户数据持久化
+        personService.register(person);//将用户数据持久化
         session.put("person", person);
         return SUCCESS;
     }
@@ -85,7 +85,7 @@ public class RegisterAction extends ActionSupport implements ServletRequestAware
     public void isUsernameExist() throws Exception {
         String username = request.getParameter("username");
         System.out.println(username);
-        Boolean isExist = personService.isUsernameExist(username);
+        Boolean isExist = personService.isAccountExist(username);
 
         JSONObject jsonObject = new JSONObject();
 

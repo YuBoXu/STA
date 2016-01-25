@@ -17,25 +17,51 @@ public interface TeamDAO {
      */
     public void add(Team team);
 
-    /**根据团队名称查找团队信息
+    /**
+     * 根据团队名称查找团队信息
+     *
      * @param name
      * @return
      */
     public Team retriveByName(String name);
 
-    /**查找所有的团队的信息
+    /**
+     * 查找所有的团队的信息
+     *
      * @return
      */
     public List<Team> retriveAll();
 
-    /**更新一个团队的信息
+    /**
+     * 更新一个团队的信息
+     *
      * @param team
      */
     public void update(Team team);
 
-    /**删除一个团队的信息
+    /**
+     * 删除一个团队的信息
+     *
      * @param team
      */
     public void delete(Team team);
+
+
+    /**分页查找团队信息
+     * @param number
+     * @return
+     */
+    public List<Team> retriveByPageNumber(int number);
+
+
+    /**查询所有记录的个数
+     * @return
+     */
+    public int retriveCounts();
+
+    /**查询分页之后总页数
+     * @return
+     */
+    public int retrivePageNumber();
 
 }
