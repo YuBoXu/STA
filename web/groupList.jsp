@@ -94,7 +94,7 @@
         </tbody>
     </table>
     <ul class="am-pagination am-pagination-centered">
-        <li class="am-disabled"><a href="#">&laquo;</a></li>
+        <li><a href="javascript:previousPage()">&laquo;</a></li>
 
         <%
             for (int i = start; i <= end; i++) {
@@ -112,7 +112,7 @@
         <%
             }
         %>
-
+        <li><a href="javascript:nextPage()">&raquo;</a></li>
         <li>共<s:property value="#session.pageNumber"/>页，跳转到<input id="page" type="text"
                                                                   value="<s:property value="#session.targetPage"/>">页
             <button id="changePage" class="button button-tiny button-pill button-primary button-caution"
@@ -175,5 +175,19 @@
         else
             alert("输入不合法！");
     })
+
+    function previousPage(){
+        if( (<s:property value="#session.targetPage"/>) <= 1){
+            window.location.href = "retriveTeamByPage?targetPage=" + 1;
+        }
+        else window.location.href = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>-1);
+    }
+    function nextPage(){
+        if( (<s:property value="#session.targetPage"/>) > (<s:property value="#session.pageNumber"/>)){
+            window.location.href = "retriveTeamByPage?targetPage=" + <s:property value="#session.pageNumber"/>;
+        }
+        else window.location.href = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>+1);
+    }
+
 </script>
 </html>
