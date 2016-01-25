@@ -1,3 +1,4 @@
+<%@ page import="domain.Person" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -53,61 +54,61 @@
 </div>
 
 <!--这里是头像-->
-<div id="photo"><s:property value="#session.protrait"><img src="img/morePersonInfo/avatar.png">
+<div id="photo"><img src="<%=request.getContextPath() +"/"+ ((Person)session.getAttribute("person")).getProtrait()%>">
 </div>
 
 <div id="User">
        <span style="font-size:25px;color:#FFFFFF">User:
-       <span id="User2" style="font-size:20px;color:#FFFFFF"><s:property value="#session.account"></span></span>
+       <span id="User2" style="font-size:20px;color:#FFFFFF"><s:property value="#session.person.account"/></span></span>
 </div>
 
 <div id="Mem1"><!--这里把是否是科协成员和Job连在一起写了，先是科协成员，然后是职务-->
        <span style="font-size:25px;color:#FFFFFF">(
-       <span id="Mem2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.isMember">科协成员</span>->
-       <span id="Job2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.job">研发中心干事</span> )</span>
+       <span id="Mem2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.isMember"/>科协成员</span>->
+       <span id="Job2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.job"/>研发中心干事</span> )</span>
 </div>
 
 <div id="Inf1"><span style="font-size:25px;color:#FFFFFF">的&nbsp;详&nbsp;细&nbsp;资&nbsp;料</span></div>
 
 <div id="Name1">
        <span style="font-size:25px;color:#FFFFFF">Name:
-       <span id="Name2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.username"></span></span>
+       <span id="Name2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.name"/></span></span>
 </div>
 
 <div id="Class1">
        <span style="font-size:25px;color:#FFFFFF">Class:
-       <span id="Class2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.class"></span></span>  </div>
+       <span id="Class2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.class"/></span></span>  </div>
 
 <div id="Email1">
        <span style="font-size:25px;color:#FFFFFF">E-mail:
-       <span id="Email2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.mail"></span></span>
+       <span id="Email2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.mail"/></span></span>
 </div>
 
 <div id="Tel1">
        <span style="font-size:25px;color:#FFFFFF">Tel:
-       <span id="Tel2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.tel"></span></span>     </div>
+       <span id="Tel2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.tel"/></span></span>     </div>
 
 <div id="QQ1">
        <span style="font-size:25px;color:#FFFFFF">QQ:
-       <span id="QQ2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.qq"></span></span>
+       <span id="QQ2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.qq"/></span></span>
 </div>
 
 <div id="We1">
          <span style="font-size:25px;color:#FFFFFF">Wechat:
-         <span id="We2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.wechat"></span></span>  </div>
+         <span id="We2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.wechat"/></span></span>  </div>
 <!--到银河的下半部分了-->
 <div id="Per1">
        <span style="font-size:25px;color:#FFFFFF">个人简介:<br>
-       <span id="Per2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.introduce"></span></span>
+       <span id="Per2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.introduce"/></span></span>
 </div>
 
 <div id="Hobby1">
        <span style="font-size:25px;color:#FFFFFF">兴趣爱好:<br>
-       <span id="Hobby2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.hobby"></span></span>  </div>
+       <span id="Hobby2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.hobby"/></span></span>  </div>
 
 <div id="Spe1">
        <span style="font-size:25px;color:#FFFFFF">特长:<br>
-       <span id="Spe2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.speciality"></span></span><!--这里写的是speciality，但是数据库表里面写的是sprciality，怀疑是数据库表里面打错了，特此注明-->
+       <span id="Spe2" style="font-size:20px;color:#FFFFFF"> <s:property value="#session.person.speciality"/></span></span><!--这里写的是speciality，但是数据库表里面写的是sprciality，怀疑是数据库表里面打错了，特此注明-->
 </div>
 </body>
 
