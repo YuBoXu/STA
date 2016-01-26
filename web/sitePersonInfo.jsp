@@ -20,6 +20,10 @@
             height: 8vw;
             border-radius: 4vw;
         }
+
+        .wrongInput {
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
@@ -36,10 +40,10 @@
         <form class="am-form am-form-horizontal">
 
             <div class="am-form-group">
-                <label for="username" class="am-u-sm-2 am-form-label">用户名</label>
+                <label for="account" class="am-u-sm-2 am-form-label">用户名</label>
 
                 <div class="am-u-sm-10">
-                    <input type="text" id="username" disabled value=<s:property value="#session.person.account"/>>
+                    <input type="text" id="account" disabled value=<s:property value="#session.person.account"/>>
                 </div>
             </div>
 
@@ -55,7 +59,8 @@
                 <label for="classes" class="am-u-sm-2 am-form-label">班级</label>
 
                 <div class="am-u-sm-10">
-                    <input type="text" id="classes" value=<s:property value="#session.person.classes"/>>
+                    <input type="text" id="classes" value=<s:property value="#session.person.classes"/>><span
+                        class="glyphicon glyphicon-ok"></span>
                 </div>
             </div>
 
@@ -117,7 +122,8 @@
                 </div>
             </div>
 
-            <p style="text-align: center;width: 100%"><input type="button" class="am-btn am-btn-primary" value="保存"></p>
+            <p style="text-align: center;width: 100%"><input id="saveChangeBtn" type="button"
+                                                             class="am-btn am-btn-primary" value="保存"></p>
 
         </form>
     </div>
@@ -126,6 +132,100 @@
 </body>
 
 <script type="text/javascript">
+    /*保存更改信息*/
+    $("#saveChangeBtn").click(function () {
+        if (!checkClassesIsCorrect()) {
+            alert("班级信息填写不正确，请检查！");
+            return;
+        }
+        if (!checkQqIsCorrect()) {
+            alert("qq信息填写不正确，请检查！");
+            return;
+        }
+        if (!checkTelIsLegal()) {
+            alert("电话号码填写不正确，请检查！");
+            return;
+        }
+        if (!checkMailIsLegal()) {
+            alert("邮件信息填写不正确，请检查！");
+            return;
+        }
+
+        $.ajax({
+            type: "POST",  //提交方式
+            url: "savePersonInfo",//路径
+            dataType: "json",//返回的json格式的数据
+            data: {
+                "person.account": $("#account").val().trim(),
+                "person.classes": $("#classes").val().trim(),
+                "person.qq": $("#qq").val().trim(),
+                "person.tel": $("#tel").val().trim(),
+                "person.mail": $("#mail").val().trim(),
+                "person.wechat": $("#wechat").val().trim(),
+                "person.hobby": $("#hobby").val().trim(),
+                "person.speciality": $("#speciality").val().trim(),
+                "person.introduce": $("#introduce").val().trim(),
+                "saveItem":"personInfo"
+            },//数据，这里使用的是Json格式进行传输
+            success: function (result) {//返回数据根据结果进行相应的处理
+
+                if (result.saveStatus == "success") {
+                    alert("保存成功！");
+                }
+                else {
+                    alert("保存失败！");
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+    /*校验班级是否正确*/
+    function checkClassesIsCorrect() {
+        var classes = $("#classes").val().trim();
+        if (classes.length > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    /*校验电话号码是否正确*/
+    function checkTelIsLegal() {
+        var tel = $("#tel").val().trim();
+        var telValidator = /^1\d{10}$/;
+        if (telValidator.test(tel)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+    /*校验邮件地址是否正确*/
+    function checkMailIsLegal() {
+        var mail = $("#mail").val().trim();
+        var mailValidator = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (mailValidator.test(mail)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    /*校验qq是否正确*/
+    function checkQqIsCorrect() {
+        var qq = $("#qq").val().trim();
+        var qqValidator = /^[1-9][0-9]{4,11}$/;
+        if (qqValidator.test(qq)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
 </script>
 </html>

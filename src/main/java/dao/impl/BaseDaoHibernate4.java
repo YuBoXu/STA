@@ -1,7 +1,9 @@
 package dao.impl;
 
 import dao.BaseDao;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,7 +30,7 @@ public class BaseDaoHibernate4<T> implements BaseDao<T> {
 
     @SuppressWarnings("unchecked")
     public T get(Class<T> entityClazz, Serializable id) {
-        return (T)getSessionFactory().getCurrentSession().get(entityClazz , id);
+        return (T) getSessionFactory().openSession().get(entityClazz, id);
     }
 
     public Serializable save(T entity) {
@@ -36,7 +38,10 @@ public class BaseDaoHibernate4<T> implements BaseDao<T> {
     }
 
     public void update(T entity) {
-        getSessionFactory().getCurrentSession().save(entity);
+        Session session = getSessionFactory().openSession();
+        Transaction transaction =session.beginTransaction();
+        session.update(session.merge(entity));
+        transaction.commit();
     }
 
     public void delete(T entity) {
@@ -55,13 +60,13 @@ public class BaseDaoHibernate4<T> implements BaseDao<T> {
 
     public long findCount(Class<T> entityClazz) {
         List<?> l = find("select count(*) from " + entityClazz.getSimpleName());
-        if(l != null && l.size() == 1)
-            return (Long)l.get(0);
+        if (l != null && l.size() == 1)
+            return (Long) l.get(0);
         return 0;
     }
 
     @SuppressWarnings("unchecked")
-    protected List<T> find(String hql){
-        return (List<T>)getSessionFactory().getCurrentSession().createQuery(hql).list();
+    protected List<T> find(String hql) {
+        return (List<T>) getSessionFactory().getCurrentSession().createQuery(hql).list();
     }
 }

@@ -50,4 +50,9 @@ public interface PersonService {
      */
     public Person retriveById(int id);
 
+    /**更改用户基本信息
+     * @param person
+     */
+    public Person savePersonInfo(Person person,String saveItem);
+
 }

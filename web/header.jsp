@@ -11,6 +11,7 @@
 
 <script src="frame/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 <script src="frame/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+<script src="js/ajaxfileupload.js"></script>
 <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
 
 <div style="position: fixed;width: 100%;background:black;border-color: black;z-index: 200"
