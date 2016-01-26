@@ -26,7 +26,7 @@ public interface PersonService {
      * @param account
      * @return
      */
-    public Person getPerson(String account);
+    public Person retriveByAccount(String account);
 
 
     /**
@@ -34,12 +34,25 @@ public interface PersonService {
      *
      * @param person
      */
-    public void registerPerson(Person person);
+    public void register(Person person);
 
-    /**判断用户名是否存在
+    /**
+     * 判断用户名是否存在
+     *
      * @param name
      * @return
      */
-    public boolean isUsernameExist(String name);
+    public boolean isAccountExist(String name);
+
+    /**根据用户id查找用户信息
+     * @param id
+     * @return
+     */
+    public Person retriveById(int id);
+
+    /**更改用户基本信息
+     * @param person
+     */
+    public Person savePersonInfo(Person person,String saveItem);
 
 }

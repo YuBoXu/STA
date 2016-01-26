@@ -21,21 +21,48 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person getPerson(String account) {
+    public Person retriveByAccount(String account) {
         return personDao.retriveByAccount(account);
     }
 
     @Override
-    public void registerPerson(Person person) {
+    public void register(Person person) {
         personDao.add(person);
     }
 
     @Override
-    public boolean isUsernameExist(String name) {
+    public boolean isAccountExist(String name) {
         Boolean isExist = false;
         Person person = personDao.retriveByAccount(name);
         if (person == null) isExist = false;
         else isExist = true;
         return isExist;
+    }
+
+    @Override
+    public Person retriveById(int id) {
+        return personDao.retriveById(id);
+    }
+
+    @Override
+    public Person savePersonInfo(Person person, String saveItem) {
+        Person oldPerson = retriveByAccount(person.getAccount());
+
+        if (saveItem.equals("personInfo")){
+            oldPerson.setClasses(person.getClasses());
+            oldPerson.setQq(person.getQq());
+            oldPerson.setTel(person.getTel());
+            oldPerson.setMail(person.getMail());
+            oldPerson.setWechat(person.getWechat());
+            oldPerson.setHobby(person.getHobby());
+            oldPerson.setSpeciality(person.getSpeciality());
+            oldPerson.setIntroduce(person.getIntroduce());
+        }else if (saveItem.equals("password")){
+            oldPerson.setPassword(person.getPassword());
+        }else if (saveItem.equals("avatar")){
+            oldPerson.setProtrait(person.getProtrait());
+        }
+        personDao.update(oldPerson);
+        return oldPerson;
     }
 }

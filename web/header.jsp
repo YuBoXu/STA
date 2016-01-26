@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ZaraN
@@ -10,6 +11,7 @@
 
 <script src="frame/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 <script src="frame/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+<script src="js/ajaxfileupload.js"></script>
 <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
 
 <div style="position: fixed;width: 100%;background:black;border-color: black;z-index: 200"
@@ -25,7 +27,7 @@
     <div class="am-collapse am-topbar-collapse am-animation-slide-top" id="doc-topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
             <li><a href="index.jsp">首页</a></li>
-            <li><a href="groupList.jsp">来组团</a></li>
+            <li><a href="retriveTeamByPage?targetPage=1">来组团</a></li>
             <li><a href="#">下资源</a></li>
             <li><a href="#">听讲座</a></li>
             <li class="am-dropdown" data-am-dropdown>

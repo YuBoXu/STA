@@ -13,9 +13,12 @@ public class Team {
     private int id;
     private String name;
     private int teamSize;
+    private int currentSize;
     private String introduce;
     private String logo;
-
+    private String publishTime;
+    private int ministerId;
+    private String expiryDate;
     private Set<Person> personList;//团队成员
 
     public Team() {
@@ -31,11 +34,12 @@ public class Team {
     @Override
     public String toString() {
         return "Team{" +
-                "logo='" + logo + '\'' +
-                ", introduce='" + introduce + '\'' +
-                ", teamSize=" + teamSize +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", id=" + id +
+                ", teamSize=" + teamSize +
+                ", currentSize=" + currentSize +
+                ", introduce='" + introduce + '\'' +
+                ", logo='" + logo + '\'' +
                 '}';
     }
 
@@ -68,6 +72,15 @@ public class Team {
         this.teamSize = teamSize;
     }
 
+    @Column(name = "currentSize")
+    public int getCurrentSize() {
+        return currentSize;
+    }
+
+    public void setCurrentSize(int currentSize) {
+        this.currentSize = currentSize;
+    }
+
     @Column(name = "introduce")
     public String getIntroduce() {
         return introduce;
@@ -84,6 +97,33 @@ public class Team {
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    @Column(name = "publishTime")
+    public String getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(String publishTime) {
+        this.publishTime = publishTime;
+    }
+
+    @Column(name = "expiryDate")
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+    @Column(name = "ministerId")
+    public int getMinisterId() {
+        return ministerId;
+    }
+
+    public void setMinisterId(int ministerId) {
+        this.ministerId = ministerId;
     }
 
     @ManyToMany(cascade = CascadeType.MERGE)

@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50022
 Source Host           : localhost:3306
-Source Database       : sat
+Source Database       : sta
 
 Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2016-01-23 19:22:04
+Date: 2016-01-25 19:46:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -176,6 +176,12 @@ INSERT INTO `person` VALUES ('36', 'SADADSAD', '21214', 'nihhaoya@qq.com', 'niha
 INSERT INTO `person` VALUES ('37', 'akjsdla', '21412', 'skjah@jskha.com', 'kaka', '111111', null, '0', '21413241', 'safafaf', '', null, 'person_portraits/kaka.jpg', 'fdgdgfd', 'dhghfh');
 INSERT INTO `person` VALUES ('38', 'sadas', '21341', 'dadwa@qq.com', 'buzhidao', '111111', '12354678955', '0', '65431253', '324544fdsf', 'hgmgvf', null, 'person_portraits/buzhidao.jpg', 'sdfsdfsd', 'xvdvxdv');
 INSERT INTO `person` VALUES ('39', '啥快递很快', '1342', 'adw@akdh.com', 'budong', '111111', '13242342343', '0', '2142353634', '微信', '个人简介', null, 'person_portraits/budong.jpg', '兴趣爱好', '特长');
+INSERT INTO `person` VALUES ('40', 'dsfdfsd', '13213', 'sada@qq.gf', 'nihao', '111111', '13244566575', '0', '3425246', 'sadsad', 'fdgdf', null, 'person_portraits/nihao.jpg', 'saasd', 'dfsg');
+INSERT INTO `person` VALUES ('41', 'commit', '132', 'adawd@adad.jdh', 'commit', 'commit', '13244556789', '0', '2133214', '435355', '324234', null, 'person_portraits/commit.jpg', '657567', '645646');
+INSERT INTO `person` VALUES ('42', 'sdfaf', '2131', 'dawda@qq.com', 'yaya', '111111', '13453466785', '0', '32423525', 'fdgdfg', '243253fsfd', null, 'person_portraits/yaya.jpg', 'dfgdg', 'ewfesa');
+INSERT INTO `person` VALUES ('43', 'wsj', '1302', 'marts_forever@163.com', 'marts_forever', 'qq450881199', '13924569321', '0', '1456943876', '1392569321', '文能挂机喷队友，武能越塔送人头。进可孤身一挑五，退可坐等二十投。前能飞脚救残敌，后能放墙堵队友。静则百年不见人，动则千里送超神。英勇闪现送一血，卖起队友不回头。顺风浪，逆风投。问君能有几多愁，恰似五人四坑20投', null, 'person_portraits/marts_forever.jpg', '啦啦啦啦，我喜欢打撸', '没什么特长');
+INSERT INTO `person` VALUES ('44', 'sadasad', 'sadasad', 'sadasd@af.fsg', 'sadasad', '111111', '13425255755', '0', '2114153', '', '', null, 'person_portraits/sadasad.jpg', '', '');
+INSERT INTO `person` VALUES ('45', 'haha', null, 'zhaoliu@qq.com', 'zhaoliu', '123456', '1234567891234', '0', '324324243', '1234567891234', '没有介绍', '干事', '#', '喜欢打篮球，游戏什么的', '前端设计');
 
 -- ----------------------------
 -- Table structure for resource
@@ -205,16 +211,51 @@ CREATE TABLE `team` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) default NULL,
   `teamSize` int(11) default NULL,
+  `currentSize` int(11) default NULL,
   `introduce` varchar(255) default NULL,
   `logo` varchar(255) default NULL,
+  `ministerId` int(11) default NULL,
+  `expiryDate` varchar(255) default NULL,
+  `publishTime` varchar(255) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of team
 -- ----------------------------
-INSERT INTO `team` VALUES ('1', '第一个团队', '10', '没有介绍', '#');
-INSERT INTO `team` VALUES ('2', '第二个团队', '5', '没有介绍2', '#2');
+INSERT INTO `team` VALUES ('1', '第一个团队', '10', '3', '没有介绍', '#', '3', '2015-11-11', '2015-11-11');
+INSERT INTO `team` VALUES ('2', '第二个团队', '5', '4', '没有介绍2', '#2', '4', '2015-11-11', '2015-12-12');
+INSERT INTO `team` VALUES ('3', '芒果团队', '5', '5', '一个专注于帮助聋哑人的大学生团队', '#', '5', '2015-11-11', '2015-7-9');
+INSERT INTO `team` VALUES ('102', '芒果团队1', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('103', '芒果团队2', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('104', '芒果团队3', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('105', '芒果团队4', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('106', '芒果团队5', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('107', '芒果团队6', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('108', '芒果团队7', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('109', '芒果团队8', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('110', '芒果团队9', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('111', '芒果团队10', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:25 CST 2016');
+INSERT INTO `team` VALUES ('112', '芒果团队1', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:56:59 CST 2016');
+INSERT INTO `team` VALUES ('113', '芒果团队2', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('114', '芒果团队3', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('115', '芒果团队4', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('116', '芒果团队5', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('117', '芒果团队6', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('118', '芒果团队7', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('119', '芒果团队8', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('120', '芒果团队9', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('121', '芒果团队10', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:00 CST 2016');
+INSERT INTO `team` VALUES ('122', '芒果团队1', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('123', '芒果团队2', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('124', '芒果团队3', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('125', '芒果团队4', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('126', '芒果团队5', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('127', '芒果团队6', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('128', '芒果团队7', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('129', '芒果团队8', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('130', '芒果团队9', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('131', '芒果团队10', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
 
 -- ----------------------------
 -- Table structure for team_person
