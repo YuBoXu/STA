@@ -11,15 +11,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    List<Person> ministers = (List<Person>) session.getAttribute("ministers");
-    List<Team> teams = (List<Team>) session.getAttribute("teams");
     Integer pageNumber = (Integer) session.getAttribute("pageNumber");
-    Integer targetPage = Integer.parseInt((String) session.getAttribute("targetPage"));
-    String retriveStatus = (String) session.getAttribute("retriveStatus");
-
-    int start = ((Map<String, Integer>) session.getAttribute("startAndEnd")).get("start");
-    int end = ((Map<String, Integer>) session.getAttribute("startAndEnd")).get("end");
-
 %>
 <html>
 <head>
@@ -70,51 +62,38 @@
         </tr>
         </thead>
         <tbody>
-        <%
-            if (!teams.isEmpty()) {
-                for (int i = 0; i < teams.size(); i++) {
-        %>
-        <tr style="vertical-align: middle">
-            <td><%=teams.get(i).getName()%>
-            </td>
-            <td><%=teams.get(i).getCurrentSize()%>/<%=teams.get(i).getTeamSize()%>
-            </td>
-            <td><%=ministers.get(i).getName()%>
-            </td>
-            <td><%=teams.get(i).getExpiryDate()%>
-            </td>
-            <td><a class="button button-caution button-tiny" data-am-modal="{target: '#information'}"
-                   onclick="javascript:showDetail('<%=teams.get(i).getName()%>','<%=ministers.get(i).getName()%>','<%=teams.get(i).getTeamSize()%>','<%=teams.get(i).getCurrentSize()%>','<%=teams.get(i).getPublishTime()%>','<%=teams.get(i).getIntroduce()%>','<%=teams.get(i).getExpiryDate()%>')">Show</a>
-            </td>
-        </tr>
-        <%
-                }
-            }
-        %>
+        <c:if test="${sessionScope.teams != null}">
+            <c:forEach var="team" items="${sessionScope.teams}" varStatus="status">
+                <tr style="vertical-align: middle">
+                    <td>${team.name}
+                    </td>
+                    <td>${team.currentSize}/${team.teamSize}
+                    </td>
+                    <td>${sessionScope.ministers[status.index].name}
+                    </td>
+                    <td>${team.expiryDate}
+                    </td>
+                    <td><a class="button button-caution button-tiny" data-am-modal="{target: '#information'}"
+                           onclick="javascript:showDetail('${team.name}','${sessionScope.ministers[status.index].name}','${team.teamSize}','${team.currentSize}','${team.publishTime}','${team.introduce}','${team.expiryDate}')">Show</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </c:if>
         </tbody>
     </table>
     <ul class="am-pagination am-pagination-centered">
         <li><a href="javascript:previousPage()">&laquo;</a></li>
 
-        <%
-            for (int i = start; i <= end; i++) {
-        %>
-        <li
-                <%
-                    if (i == targetPage) {
-                %>
+        <c:forEach begin="${sessionScope.startAndEnd.start}" end="${sessionScope.startAndEnd.end}" varStatus="status">
+            <li
+            <c:if test="${status.index==sessionScope.targetPage}">
                 class="am-active"
-                <%
-                    }
-                %>
-                ><a href="retriveTeamByPage?targetPage=<%=i%>"><%=i%>
-        </a></li>
-        <%
-            }
-        %>
+            </c:if>
+                    ><a href="retriveTeamByPage?targetPage=${status.index}">${status.index}
+        </c:forEach>
         <li><a href="javascript:nextPage()">&raquo;</a></li>
-        <li>共<s:property value="#session.pageNumber"/>页，跳转到<input id="page" type="text"
-                                                                  value="<s:property value="#session.targetPage"/>">页
+        <li>共${sessionScope.pageNumber}页，跳转到<input id="page" type="text"
+                                                                  value="${sessionScope.targetPage}">页
             <button id="changePage" class="button button-tiny button-pill button-primary button-caution"
                     style="margin-left: 1vh">确定
             </button>
@@ -169,12 +148,12 @@
 
     $("#changePage").click(function () {
         var targetPage = $("#page").val().trim();
-        var pageNumber = <%=pageNumber%>;
-        if (targetPage <= pageNumber)
+        var pageNumber = ${sessionScope.pageNumber};
+        if (targetPage <= pageNumber && targetPage >0)
             window.location.href = "retriveTeamByPage?targetPage=" + targetPage;
         else
             alert("输入不合法！");
-    })
+    });
 
     function previousPage(){
         if( (<s:property value="#session.targetPage"/>) <= 1){

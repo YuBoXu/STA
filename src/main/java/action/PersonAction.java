@@ -32,12 +32,6 @@ public class PersonAction extends ActionSupport implements ServletRequestAware, 
         personService = (PersonService) applicationContext.getBean("PersonService");
     }
 
-    @Action(value = "morePersonInfo", results = {
-            @Result(name = ActionSupport.SUCCESS, location = "/morePersonInfo.jsp")})
-    public String morePersonInfo(){
-        return SUCCESS;
-    }
-
     @Override
     public void setServletRequest(HttpServletRequest httpServletRequest) {
         request = httpServletRequest;

@@ -10,38 +10,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>更多信息</title>
-  <script src="frame/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
-  <script src="frame/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
-  <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
-
-  <style type="text/css">
-      #avatar{
-          width: 8vw;
-          height: 8vw;
-          border-radius: 4vw;
-      }
-  </style>
-
+    <title>更多信息</title>
+    <script src="frame/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="frame/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+    <link rel="stylesheet" href="frame/AmazeUI-2.4.2/assets/css/amazeui.min.css">
+    <style type="text/css">
+        #avatar {
+            width: 8vw;
+            height: 8vw;
+            border-radius: 4vw;
+        }
+    </style>
 </head>
 <body>
-<%@include file="header.jsp"%>
+<%@include file="header.jsp" %>
 <img src="img/main/STA.png" style="margin-top: 50px;width: 100%;height: auto"/>
 
 <div style=";margin-top: 5vh;margin-left: 10vw;margin-right: 10vw">
-    <div style="width: 10vw;float: left">
-        <div style="text-align: center">
-            <img id="avatar" src="<%=request.getContextPath() +"/"+ ((Person)session.getAttribute("person")).getProtrait()%>">
-            <h2 style="margin-top: 0px"><s:property value="#session.person.account"/></h2>
-        </div>
-        <ul class="am-nav">
-            <li class="am-active"><a href="sitePersonInfo.jsp">个人信息&nbsp;<span class="am-icon-paw"></span></a></li>
-            <li><a href="sitePassword.jsp">修改密码&nbsp;<span class="am-icon-suitcase"></span></a></li>
-            <li><a href="siteAvatar.jsp">头像设置&nbsp;<span class="am-icon-picture-o"></span></a></li>
-            <li><a href="siteGroup.jsp">组队信息&nbsp;<span class="am-icon-users"></span></a></li>
-            <li><a href="siteMember.jsp">科协成员&nbsp;<span class="am-icon-send"></span></a></li>
-        </ul>
-    </div>
+
+    <%@include file="siteNavigation.jsp" %>
 
     <div style="width: 60vw;float: left;margin-left: 5vw;">
         <h1><span class="am-icon-paw am-icon-sm"></span>&nbsp;个人信息</h1>
@@ -50,6 +37,7 @@
 
             <div class="am-form-group">
                 <label for="username" class="am-u-sm-2 am-form-label">用户名</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="username" disabled value=<s:property value="#session.person.account"/>>
                 </div>
@@ -57,6 +45,7 @@
 
             <div class="am-form-group">
                 <label for="name" class="am-u-sm-2 am-form-label">姓名</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="name" disabled value=<s:property value="#session.person.name"/>>
                 </div>
@@ -64,6 +53,7 @@
 
             <div class="am-form-group">
                 <label for="classes" class="am-u-sm-2 am-form-label">班级</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="classes" value=<s:property value="#session.person.classes"/>>
                 </div>
@@ -71,6 +61,7 @@
 
             <div class="am-form-group">
                 <label for="qq" class="am-u-sm-2 am-form-label">QQ</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="qq" value=<s:property value="#session.person.qq"/>>
                 </div>
@@ -78,6 +69,7 @@
 
             <div class="am-form-group">
                 <label for="tel" class="am-u-sm-2 am-form-label">电话号码</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="tel" value=<s:property value="#session.person.tel"/>>
                 </div>
@@ -85,6 +77,7 @@
 
             <div class="am-form-group">
                 <label for="mail" class="am-u-sm-2 am-form-label">邮件</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="mail" value=<s:property value="#session.person.mail"/>>
                 </div>
@@ -92,6 +85,7 @@
 
             <div class="am-form-group">
                 <label for="wechat" class="am-u-sm-2 am-form-label">微信</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="wechat" value=<s:property value="#session.person.wechat"/>>
                 </div>
@@ -99,6 +93,7 @@
 
             <div class="am-form-group">
                 <label for="hobby" class="am-u-sm-2 am-form-label">兴趣爱好</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="hobby" value=<s:property value="#session.person.hobby"/>>
                 </div>
@@ -106,6 +101,7 @@
 
             <div class="am-form-group">
                 <label for="speciality" class="am-u-sm-2 am-form-label">特长</label>
+
                 <div class="am-u-sm-10">
                     <input type="text" id="speciality" value=<s:property value="#session.person.speciality"/>>
                 </div>
@@ -114,8 +110,10 @@
 
             <div class="am-form-group">
                 <label for="introduce" class="am-u-sm-2 am-form-label">个人简介</label>
+
                 <div class="am-u-sm-10">
-                    <textarea rows="5" type="text" id="introduce"><s:property value="#session.person.introduce"/></textarea>
+                    <textarea rows="5" type="text" id="introduce"><s:property
+                            value="#session.person.introduce"/></textarea>
                 </div>
             </div>
 

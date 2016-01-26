@@ -94,7 +94,7 @@
     <li class="layer fullImg" data-depth="0.40"><img src="img/personInfo/forwardStar.png" class="fullImg"></li>
     <li class="layer fullImg" data-depth="0.60"><img src="img/personInfo/leftLight.png" class="fullImg"></li>
     <li class="layer fullImg" data-depth="0.80"><img src="img/personInfo/rightLight.png" class="fullImg"></li>
-    <li class="layer fullImg" data-depth="0.00"><a href="sitePersonInfo.jsp"><img src="img/personInfo/arrow.png" style="top: 20%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></a></li>
+    <li class="layer fullImg" data-depth="0.00"><a href="sitePersonInfo.jsp?site=sitePersonInfo"><img src="img/personInfo/arrow.png" style="top: 20%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></a></li>
   </ul>
 
   <div class="content">
