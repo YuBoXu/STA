@@ -55,4 +55,15 @@ public interface TeamService {
      */
     public Map<String,Integer> getStartAndEnd(int targetPage,int pageNumber);
 
+    /**用户申请加入团队，判断是否准许该用户加入团队，
+     * 1、用户为该队队长，则不允许加入该团队
+     * 2、用户为该队队员，则不允许加入团队
+     * 3、团队成员数量已经到达最大上限
+     * 4、组队信息已经超过截止日期
+     * 返回的是json字符串
+     * @param groupId
+     * @param personId
+     * @return
+     */
+    public String applyToJoinGroup(int groupId,int personId);
 }

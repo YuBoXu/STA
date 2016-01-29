@@ -38,7 +38,7 @@
     <title>注册-加入我们</title>
     <script>
 
-        var isUsernameIxist = false;
+        var isUsernameLegal = false;
 
         /*检测用户名是否存在*/
         function checkUsernameIsExist() {
@@ -47,7 +47,7 @@
                 $("#usernameIsExist").html("(用户名不能为空！)");
                 $("#usernameIsExist").focus();
                 $("#usernameIsExist").css("color", "red");
-                isUsernameIxist = false;
+                isUsernameLegal = false;
             }
 
             $.ajax({
@@ -63,12 +63,12 @@
                         $("#usernameIsExist").html("(用户名已存在，换个用户名试试吧！)");
                         $("#usernameIsExist").focus();
                         $("#usernameIsExist").css("color", "red");
-                        isUsernameIxist = false;
+                        isUsernameLegal = false;
                     }
                     else if (result.isExist == "no") {
                         $("#usernameIsExist").html("(用户名可以使用，一定要记清楚喔，忘了就没了！)");
                         $("#usernameIsExist").css("color", "green");
-                        isUsernameIxist = true;
+                        isUsernameLegal = true;
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -245,7 +245,7 @@
 
         /*注册用户信息*/
         function register() {
-            /*alert(isUsernameIxist);
+            /*alert(isUsernameLegal);
              alert(checkPasswordIsLeagal());
              alert(checkPassword2IsCorrect());
              alert(checkNameIsCorrect());
@@ -253,7 +253,7 @@
              alert(checkMailIsLegal());
              alert(checkQqIsCorrect());
              alert(isPortraitleagel);*/
-            if (isUsernameIxist && checkPasswordIsLeagal() && checkPassword2IsCorrect() && checkNameIsCorrect() && checkClassesIsCorrect() && checkMailIsLegal() && checkQqIsCorrect() && isPortraitleagel && checkTelIsLegal()) {
+            if (isUsernameLegal && checkPasswordIsLeagal() && checkPassword2IsCorrect() && checkNameIsCorrect() && checkClassesIsCorrect() && checkMailIsLegal() && checkQqIsCorrect() && isPortraitleagel && checkTelIsLegal()) {
                 var form = document.getElementById("registerForm");
                 form.action = "register";
                 form.submit();

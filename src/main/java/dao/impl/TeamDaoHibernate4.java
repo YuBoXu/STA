@@ -85,4 +85,9 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
         }
         return pagenumber;
     }
+
+    @Override
+    public Team retriveById(int id) {
+        return super.get(Team.class,id);
+    }
 }

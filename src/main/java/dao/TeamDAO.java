@@ -64,4 +64,10 @@ public interface TeamDAO {
      */
     public int retrivePageNumber();
 
+    /**根据id查询团队信息
+     * @param id
+     * @return
+     */
+    public Team retriveById(int id);
+
 }

@@ -40,6 +40,9 @@ public class Team {
                 ", currentSize=" + currentSize +
                 ", introduce='" + introduce + '\'' +
                 ", logo='" + logo + '\'' +
+                ", publishTime='" + publishTime + '\'' +
+                ", ministerId=" + ministerId +
+                ", expiryDate='" + expiryDate + '\'' +
                 '}';
     }
 

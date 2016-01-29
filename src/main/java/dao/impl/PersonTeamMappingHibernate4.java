@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class PersonTeamMappingHibernate4 extends BaseDaoHibernate4 implements PersonTeamMapping {
     @Override
     public void addMapping(Team team,Person person) {
-        Session session = getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         Person p = (Person) session.get(Person.class, person.getId());
@@ -30,7 +30,7 @@ public class PersonTeamMappingHibernate4 extends BaseDaoHibernate4 implements Pe
 
     @Override
     public void deleteMapping(Team team,Person person) {
-        Session session = getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         Person p = (Person) session.get(Person.class, person.getId());
