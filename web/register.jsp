@@ -383,7 +383,7 @@
                 <label>你的头像</label><br>
 
                 <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png"
-                                                   style="width: 200px;height: 200px"/></p>
+                                                   style="width: 200px;height: 200px;border-radius: 100px"/></p>
 
                 <p>
                     <%--<button type="submit" class="am-btn am-btn-default">提交</button>--%>

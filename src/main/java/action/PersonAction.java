@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.PersonService;
+import util.ImageUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -104,6 +105,8 @@ public class PersonAction extends ActionSupport implements ServletRequestAware, 
             }
 
             FileUtils.copyFile(portrait, saveFile);
+            String savePath = saveFile.getAbsolutePath();
+            ImageUtils.scaleByHeightOrWodth(savePath, savePath, 200, -1);
             person.setProtrait("person_portraits/" + portraitFileName);
             personService.savePersonInfo(person,saveItem);
             session.put("person",person);

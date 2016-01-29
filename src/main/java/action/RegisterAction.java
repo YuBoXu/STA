@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.PersonService;
+import util.ImageUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -56,28 +57,28 @@ public class RegisterAction extends ActionSupport implements ServletRequestAware
             System.out.println(portraitContentType);//查看文件的类型，比如image/jpeg*/
 
             portraitContentType = portraitFileName.substring(portraitFileName.lastIndexOf(".") + 1);//获得正真的文件类型
-            System.out.println("portraitContentType:" + portraitContentType);
             portraitFileName = person.getAccount() + "." + portraitContentType;//存储的文件名称为用户账号名
 
-            String realpath = ServletActionContext.getServletContext().getRealPath("/person_portraits");
-            /*System.out.println("realpath:" + realpath);*/
-
-            File saveFile = new File(new File(realpath), portraitFileName);
+            String realpath = ServletActionContext.getServletContext().getRealPath("/person_portraits");//头像存储路径
+            File saveFile = new File(new File(realpath), portraitFileName);//在存储路径下新建一个与头像名称以及类型一样的文件
             if (!saveFile.getParentFile().exists()) {
                 System.out.println("目录不存在，重新创建目录！");
                 saveFile.getParentFile().mkdirs();
             }
-
+            /*将头像文件复制到目标头像中去*/
             FileUtils.copyFile(portrait, saveFile);
+            /*将目标头像按比例缩放位高度为200px的图片*/
+            String savePath = saveFile.getAbsolutePath();
+            ImageUtils.scaleByHeightOrWodth(savePath,savePath,200,-1);
+            /*设置用户头像的存储路径*/
             person.setProtrait("person_portraits/" + portraitFileName);
-            /*System.out.println("protrait" + person.getProtrait());
-            System.out.println("文件上传成功：" + saveFile.getAbsolutePath());*/
         }
         else{
+            /*如果用户没有选择头像文件，则使用默认的头像文件*/
             person.setProtrait("img/avatar/avatar.png");
         }
         personService.register(person);//将用户数据持久化
-        session.put("person", person);
+        session.put("person", person);//将person变量放置到session中去
         return SUCCESS;
     }
 
