@@ -4,8 +4,6 @@ import dao.TeamDAO;
 import domain.Team;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import util.ConstantUtil;
 
@@ -73,6 +71,7 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
         Session session = getSessionFactory().openSession();
         Query query = session.createQuery("select count(id) from Team");
         int result = Integer.parseInt(query.uniqueResult().toString());
+        session.close();
         return result;
     }
 

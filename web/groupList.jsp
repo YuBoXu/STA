@@ -10,9 +10,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    Integer pageNumber = (Integer) session.getAttribute("pageNumber");
-%>
 <html>
 <head>
     <script src="frame/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
@@ -164,7 +161,7 @@
         else window.location.href = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>-1);
     }
     function nextPage() {
-        if ((<s:property value="#session.targetPage"/>) > (<s:property value="#session.pageNumber"/>)) {
+        if ((<s:property value="#session.targetPage"/>) >= (<s:property value="#session.pageNumber"/>)) {
             window.location.href = "retriveTeamByPage?targetPage=" + <s:property value="#session.pageNumber"/>;
         }
         else window.location.href = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>+1);
