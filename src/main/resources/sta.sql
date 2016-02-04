@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2016-01-25 19:46:45
+Date: 2016-02-01 19:31:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -182,6 +182,11 @@ INSERT INTO `person` VALUES ('42', 'sdfaf', '2131', 'dawda@qq.com', 'yaya', '111
 INSERT INTO `person` VALUES ('43', 'wsj', '1302', 'marts_forever@163.com', 'marts_forever', 'qq450881199', '13924569321', '0', '1456943876', '1392569321', '文能挂机喷队友，武能越塔送人头。进可孤身一挑五，退可坐等二十投。前能飞脚救残敌，后能放墙堵队友。静则百年不见人，动则千里送超神。英勇闪现送一血，卖起队友不回头。顺风浪，逆风投。问君能有几多愁，恰似五人四坑20投', null, 'person_portraits/marts_forever.jpg', '啦啦啦啦，我喜欢打撸', '没什么特长');
 INSERT INTO `person` VALUES ('44', 'sadasad', 'sadasad', 'sadasd@af.fsg', 'sadasad', '111111', '13425255755', '0', '2114153', '', '', null, 'person_portraits/sadasad.jpg', '', '');
 INSERT INTO `person` VALUES ('45', 'haha', null, 'zhaoliu@qq.com', 'zhaoliu', '123456', '1234567891234', '0', '324324243', '1234567891234', '没有介绍', '干事', '#', '喜欢打篮球，游戏什么的', '前端设计');
+INSERT INTO `person` VALUES ('46', 'marts', '666666', '66666@qqqqqqq.com', 'xxxxxx', 'xxxxxx', '16666666666', '0', '666666', '66666', '6666666', null, 'person_portraits/xxxxxx.jpg', '666666', '666666');
+INSERT INTO `person` VALUES ('47', 'qeqeqe', 'qeqewwww', 'qeqeq@add.dsf', 'qeqeqe', 'qeqeqe', '11313123331', '0', '21312414', 'qeqeqe', 'qeqeeqe', null, 'person_portraits/qeqeqe.jpg', 'qeqeqe', 'qeqeqeqe');
+INSERT INTO `person` VALUES ('48', 'asasas', 'asasas', 'adasa@dsa.dafsa', 'asasas', 'asasas', '12342342344', '0', '12342123', 'sasaa', 'saasasa', null, 'img/avatar/avatar.png', 'saasas', 'asasa');
+INSERT INTO `person` VALUES ('49', 'zxzxzx', '213124', 'asdcsa@ad.dg', 'zxzxzx', 'zxzxzx', '12432524324', '0', '213543', '', '', null, 'person_portraits/zxzxzx.jpg', '', '');
+INSERT INTO `person` VALUES ('50', 'hahaha', 'hahaha', 'weqdw@dsa.dsfd', 'hahaha', 'hahaha', '13242425555', '0', '21524131', 'hahaha', 'hahaha', null, 'person_portraits/hahaha.jpg', 'hahaha', 'hahaha');
 
 -- ----------------------------
 -- Table structure for resource
@@ -202,6 +207,74 @@ CREATE TABLE `resource` (
 -- Records of resource
 -- ----------------------------
 INSERT INTO `resource` VALUES ('1', '高数学习资料', '没有介绍', '#', 'Wed Jan 13 20:01:44 CST 2016', '300.0', '0');
+INSERT INTO `resource` VALUES ('2', 'C++', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', 'Mon Feb 01 15:50:17 CST 2016', '1000.0', '0');
+INSERT INTO `resource` VALUES ('3', 'C++', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('4', 'C++0', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('5', 'C++1', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('6', 'C++2', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('7', 'C++3', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('8', 'C++4', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('9', 'C++5', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('10', 'C++6', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('11', 'C++7', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('12', 'C++8', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('13', 'C++9', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('14', 'C++10', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('15', 'C++11', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('16', 'C++12', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('17', 'C++13', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('18', 'C++14', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('19', 'C++15', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('20', 'C++16', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('21', 'C++17', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('22', 'C++18', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('23', 'C++19', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('24', 'C++20', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('25', 'C++21', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('26', 'C++22', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('27', 'C++23', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('28', 'C++24', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('29', 'C++25', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('30', 'C++26', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('31', 'C++27', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('32', 'C++28', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('33', 'C++29', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('34', 'C++30', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('35', 'C++31', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('36', 'C++32', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('37', 'Java33', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('38', 'Java34', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('39', 'Java35', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('40', 'Java36', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('41', 'Java37', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('42', 'Java38', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('43', 'Java39', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('44', 'Java40', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('45', 'Java41', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('46', 'Java42', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('47', 'Java43', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '1');
+INSERT INTO `resource` VALUES ('48', 'PHP33', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('49', 'Objective-C33', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('50', 'PHP34', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('51', 'Objective-C34', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('52', 'PHP35', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('53', 'Objective-C35', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('54', 'PHP36', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('55', 'Objective-C36', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('56', 'PHP37', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('57', 'Objective-C37', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('58', 'PHP38', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('59', 'Objective-C38', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('60', 'PHP39', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('61', 'Objective-C39', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('62', 'PHP40', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('63', 'Objective-C40', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('64', 'PHP41', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('65', 'Objective-C41', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('66', 'PHP42', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('67', 'Objective-C42', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/dropdowns.html', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('70', 'hello', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/kexie.zip', '2016-02-01', '1000.0', '0');
+INSERT INTO `resource` VALUES ('71', 'hello', '一个比较老旧的用于开发window应用程序的开发环境', 'resource/kexie.zip', '2016-02-01', '1000.0', '4');
 
 -- ----------------------------
 -- Table structure for team
@@ -256,6 +329,8 @@ INSERT INTO `team` VALUES ('128', '芒果团队7', '5', '0', '一个专注于帮
 INSERT INTO `team` VALUES ('129', '芒果团队8', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
 INSERT INTO `team` VALUES ('130', '芒果团队9', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
 INSERT INTO `team` VALUES ('131', '芒果团队10', '5', '0', '一个专注于帮助聋哑人的大学生团队', '#', '3', '2015-11-11', 'Mon Jan 25 14:57:20 CST 2016');
+INSERT INTO `team` VALUES ('132', 'helloman', '5', '1', '我们团队特NB，来了绝对拿国奖，现在我们团队已经完成了队长选举，没错就是本大爷，现在还需要一个给本大爷出创意的和一个编代码的，像蹭我的光就赶紧来！', null, '46', '2016-01-31', 'Fri Jan 29 15:27:26 CST 2016');
+INSERT INTO `team` VALUES ('133', 'what the fuck', '5', '5', '现在手上已有创意，现征集一位代码大神，万分感激', null, '46', '2016-05-13', '2016-01-29');
 
 -- ----------------------------
 -- Table structure for team_person
@@ -279,6 +354,10 @@ INSERT INTO `team_person` VALUES ('1', '1', '3');
 INSERT INTO `team_person` VALUES ('2', '1', '4');
 INSERT INTO `team_person` VALUES ('3', '2', '4');
 INSERT INTO `team_person` VALUES ('4', '2', '5');
+INSERT INTO `team_person` VALUES ('5', '133', '50');
+INSERT INTO `team_person` VALUES ('6', '133', '49');
+INSERT INTO `team_person` VALUES ('7', '133', '47');
+INSERT INTO `team_person` VALUES ('8', '133', '48');
 
 -- ----------------------------
 -- Table structure for test

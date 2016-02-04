@@ -22,7 +22,7 @@ import java.util.*;
 public class TeamServiceImpl implements TeamService {
 
     @Autowired
-    private TeamDAO teamDAO;
+    private TeamDAO teamDao;
     @Autowired
     private PersonDao personDao;
     @Autowired
@@ -30,12 +30,12 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public void add(Team team) {
-        teamDAO.add(team);
+        teamDao.add(team);
     }
 
     @Override
     public boolean isTeamNameExist(String name) {
-        if (teamDAO.retriveByName(name) == null)
+        if (teamDao.retriveByName(name) == null)
             return false;
         else return true;
     }
@@ -43,17 +43,17 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public List<Team> retriveByPageNumber(String number) {
         int pageNumber = Integer.parseInt(number);
-        return teamDAO.retriveByPageNumber(pageNumber);
+        return teamDao.retriveByPageNumber(pageNumber);
     }
 
     @Override
     public int retriveCounts() {
-        return teamDAO.retriveCounts();
+        return teamDao.retriveCounts();
     }
 
     @Override
     public int retrivePageNumber() {
-        return teamDAO.retrivePageNumber();
+        return teamDao.retrivePageNumber();
     }
 
     @Override
@@ -87,7 +87,7 @@ public class TeamServiceImpl implements TeamService {
             SimpleDateFormat dateFormat = new SimpleDateFormat(ConstantUtil.DATE_FORMAT);
 
             String applyStatus, reason;
-            Team team = teamDAO.retriveById(groupId);
+            Team team = teamDao.retriveById(groupId);
             Person person = personDao.retriveById(personId);
             if (team.getMinisterId() == personId) {
                 applyStatus = "fail";
@@ -138,7 +138,7 @@ public class TeamServiceImpl implements TeamService {
      */
     public void JoinGroup(Team team,Person person){
         team.setCurrentSize(team.getCurrentSize()+1);
-        teamDAO.update(team);
+        teamDao.update(team);
         personTeamMapping.addMapping(team,person);
     }
 }

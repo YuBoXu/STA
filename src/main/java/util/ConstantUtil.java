@@ -8,5 +8,6 @@ import java.util.Map;
 public interface ConstantUtil {
 
     public static int NMBER_OF_RECORDS_IN_GROUPLIST = 5;
+    public static int NMBER_OF_RECORDS_IN_RESOURCE = 5;
     public static String DATE_FORMAT = "yyyy-MM-dd";
 }
