@@ -1,3 +1,4 @@
+<%@ page import="domain.Person" %>
 <%--
   Created by IntelliJ IDEA.
   User: ZaraN
@@ -66,6 +67,10 @@
       transition: width 2s, height 2s;
     }
 
+    #avatar{
+      border-radius: 40px;
+    }
+
     #avatar:hover {
       width: 100px;
       height: 100px;
@@ -89,16 +94,18 @@
     <li class="layer fullImg" data-depth="0.40"><img src="img/personInfo/forwardStar.png" class="fullImg"></li>
     <li class="layer fullImg" data-depth="0.60"><img src="img/personInfo/leftLight.png" class="fullImg"></li>
     <li class="layer fullImg" data-depth="0.80"><img src="img/personInfo/rightLight.png" class="fullImg"></li>
-    <li class="layer fullImg" data-depth="0.00"><img src="img/personInfo/arrow.png" style="top: 20%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></li>
+    <li class="layer fullImg" data-depth="0.00"><a href="sitePersonInfo.jsp?site=sitePersonInfo"><img src="img/personInfo/arrow.png" style="top: 20%;left: 60%;position: fixed;z-index: 10;cursor: pointer" id="more"></a></li>
   </ul>
 
   <div class="content">
-    <p style="text-align: center"><img id="avatar" src="img/avatar/avatar.png"></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">姓名</span>：<s:property value="#session.username"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">班级</span>：<s:property value="#session.class"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">QQ </span>：<s:property value="#session.qq"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">手机</span>：<s:property value="#session.tel"/></p>
-    <p><span style="text-shadow: 2px 2px 2px white;">个人说明</span>：<br><s:property value="#session.introduce"/></p>
+    <p style="text-align: center"><img id="avatar" src="<%=request.getContextPath() +"/"+ ((Person)session.getAttribute("person")).getProtrait()%>"></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">姓名</span>：<s:property value="#session.person.name"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">班级</span>：<s:property value="#session.person.classes"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">QQ </span>：<s:property value="#session.person.qq"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">手机</span>：<s:property value="#session.person.tel"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">兴趣爱好</span>：<s:property value="#session.person.hobby"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">个人特长</span>：<s:property value="#session.person.speciality"/></p>
+    <p><span style="text-shadow: 2px 2px 2px white;">个人说明</span>：<br><s:property value="#session.person.introduce"/></p>
   </div>
 
 
