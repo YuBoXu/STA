@@ -158,7 +158,8 @@
             padding: 3% 3% 3% 3%;
         }
         .nbs-flexisel-item img {
-            width: 55%;
+            width: 12vw;
+            height: 12vw;
             cursor: pointer;
             position: relative;
             margin-bottom: 0px;
@@ -201,6 +202,7 @@
         .detail .carousel-indicators .active {
             background: #0bf397;
         }
+
         .detail{
             overflow: hidden;
             padding: 50px 0px 0px 0px;
@@ -234,13 +236,11 @@
 
         .detail .app-screenshot{
             overflow: hidden;
-            overflow: hidden;
             margin-right: auto;
             margin-left: auto;
             padding-top: 95px;
             width: 320px;
             height: 450px;
-            background: url('../img/department/png') no-repeat;
             background-size: 100%;
         }
 
@@ -306,38 +306,6 @@
             z-index: -1;
         }
 
-        .halfWindow{
-            height: 100%;
-            width: 50%;
-            float: left;
-        }
-
-        .funcDes{
-            text-align: center;
-            font-family: title;
-            font-size: 50px;
-            margin: 0;
-        }
-
-        .activityImg{
-            width: 200px;
-            height: 200px;
-            cursor: pointer;
-            transition:width 1s, height 1s;
-            -moz-transition:width 1s, height 1s, -moz-transform 1s;
-            -webkit-transition:width 1s, height 1s,  -webkit-transform 1s;
-            -o-transition:width 1s, height 1s, -o-transform 1s;;
-        }
-
-        .activityImg:hover{
-            width:250px;
-            height:250px;
-            transform:rotateX(360deg);
-            -moz-transform:rotateX(360deg); /* Firefox 4 */
-            -webkit-transform:rotateX(360deg); /* Safari and Chrome */
-            -o-transform:rotateX(360deg); /* Opera */
-        }
-
     </style>
 </head>
 
@@ -347,67 +315,55 @@
 
 
 <div style="height: auto;width: 100%">
-    <img src="img/department/zong.jpg" class="bgImg" id="bg"/>
+    <img src="img/department/background.jpg" class="bgImg" id="bg"/>
     <div class="midContent">
-        <h1 class="title" style="font-size: 50px;margin-top: 0px;margin-bottom: 0px;color: #030303">部门</h1>
-        <p><b class="title" style="font-size: 20px;color: #088ef0">一句话</b></p>
+        <h1 class="title" style="font-size: 50px;margin-top: 0px;margin-bottom: 0px;color: #030303" data-am-scrollspy="{animation:'scale-down'}">研发中心</h1>
+        <p style="margin-top: 5vh;margin-bottom: 5vh"><b class="title" style="font-size: 20px;color: #085c9f" data-am-scrollspy="{animation:'scale-down',delay: 300}">研发中心啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</b></p>
+        <a class="button button-border" style="margin-right: 5%;color: black" data-am-scrollspy="{animation:'scale-down',delay: 600}">联系我们</a>
+        <a class="button button-border" style="color: black" data-am-scrollspy="{animation:'scale-down',delay: 900}">加入我们</a>
     </div>
     <div id="teamwork" class="teamwork">
         <div class="container">
             <div class="team-head">
                 <h3>部门成员</h3>
-                <h4>部门</h4>
+                <h4>研发中心</h4>
             </div>
             <div class="clients">
                 <div class="course_demo1">
                     <ul id="flexiselDemo1">
                         <li>
                             <div class="client">
-                                <img src="img/department/per1.png" alt="" />
+                                <img src="img/department/per1.png"/>
                                 <h3>部长</h3>
-                                <h4>张奥运</h4>
+                                <h4>张然</h4>
                             </div>
                         </li>
                         <li>
                             <div class="client">
-                                <img src="img/department/per2.png" alt="" />
+                                <img src="img/department/per2.png"/>
+                                <h3>首席技术官</h3>
+                                <h4>韦胜健</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="client">
+                                <img src="img/department/background.jpg"/>
                                 <h3>部员</h3>
-                                <h4>钟志杰</h4>
+                                <h4>周开元</h4>
                             </div>
                         </li>
                         <li>
                             <div class="client">
-                                <img src="img/department/per4.png" alt="" />
+                                <img src="img/department/portfolio-img1.jpg"/>
                                 <h3>部员</h3>
-                                <h4>刘童</h4>
+                                <h4>刘心仪</h4>
                             </div>
                         </li>
                         <li>
                             <div class="client">
-                                <img src="img/department/per3.png" alt="" />
+                                <img src="img/department/portfolio-img2.jpg"/>
                                 <h3>部员</h3>
-                                <h4>陈东</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="client">
-                                <img src="img/department/per2.png" alt="" />
-                                <h3>xx</h3>
-                                <h4>xxxx</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="client">
-                                <img src="img/department/per3.png" alt="" />
-                                <h3>xxxx</h3>
-                                <h4>xxxxx</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="client">
-                                <img src="img/department/per4.png" alt="" />
-                                <h3>xxxxxx</h3>
-                                <h4>xxxxx</h4>
+                                <h4>范俞佑</h4>
                             </div>
                         </li>
                     </ul>
@@ -463,132 +419,57 @@
             </div>
             <div class="service-grids">
                 <div class="col-md-4 service-grid">
-                    <img src="/img/department/pic1.png" alt=""/>
-                    <h3>统计</h3>
-                    <h4>财务</h4>
+                    <img src="img/department/pic1.png"/>
+                    <h3>开发</h3>
+                    <h4>开发院内项目</h4>
                 </div>
                 <div class="col-md-4 service-grid">
-                    <img src="/img/department/pic2.png" alt=""/>
-                    <h3>xxxx</h3>
-                    <h4>xxxxx</h4>
+                    <img src="img/department/pic2.png"/>
+                    <h3>团队管理</h3>
+                    <h4>管理挂靠科协的技术团队</h4>
                 </div>
                 <div class="col-md-4 service-grid">
-                    <img src="/img/department/pic3.png" alt=""/>
-                    <h3>调研</h3>
-                    <h4>xxxxxx</h4>
+                    <img src="img/department/pic3.png"/>
+                    <h3>培训</h3>
+                    <h4>为院内注入新生力量</h4>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
 
-    <div style="width: 100%;height: 80vh;background: #000;color: #fff;">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 class="funcDes" style="margin-top: 60px">定期举行</h1>
-        <h1 class="funcDes" style="font-size: 60px">部门活动</h1>
-
-    </div>
-
-
-    <!-- DETAILS
-        ================================================== -->
-    <section class="detail">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="carousel-example-generic-2" class="carousel slide">
-                        <h1>通知公告</h1>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-offset-1 col-md-6">
-                                        <h2>公告一</h2>
-                                        <p class="lead"><font color="#333">xxxxx</font></p>
-                                    </div>
-                                    <div class="col-sm-12 col-md-5">
-                                        <div class="app-screenshot">
-                                            <img src="/img/department/1.png" class="img-responsive" alt=" 1">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-offset-1 col-md-6">
-                                        <h2>公告2</h2>
-                                        <p class="lead"><font color="#333">xxxx</font></p>
-                                    </div>
-                                    <div class="col-sm-12 col-md-5">
-                                        <div class="app-screenshot">
-                                            <img src="/img/department/2.png" class="img-responsive" alt=" 2">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-offset-1 col-md-6">
-                                        <h2>公告3</h2>
-                                        <p class="lead"><font color="#333">xxxxx</font></p>
-                                    </div>
-                                    <div class="col-sm-12 col-md-5">
-                                        <div class="app-screenshot">
-                                            <img src="/img/department/3.png" class="img-responsive" alt="3">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic-2" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic-2" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic-2" data-slide-to="2"></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- portfolio section -->
     <div id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8 col-sm-12">
-                    <h2> 成果展示</h2>
-                    <p>xxxxxxxx</p>
+                    <h2>成果展示</h2>
                 </div>
             </div>
 
             <div class="row mt30">
 
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                    <img src="/img/department/portfolio-img1.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img1.jpg" alt="portfolio img"></a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                    <img src="/img/department/portfolio-img2.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img2.jpg" alt="portfolio img"></a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                    <img src="/img/department/portfolio-img3.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img3.jpg" alt="portfolio img"></a>
                 </div>
 
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <img src="/img/department/portfolio-img4.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img4.jpg" alt="portfolio img"></a>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <img src="/img/department/portfolio-img5.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img5.jpg" alt="portfolio img"></a>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <img src="/img/department/portfolio-img6.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img6.jpg" alt="portfolio img"></a>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <img src="/img/department/portfolio-img7.jpg" alt="portfolio img"></a>
+                    <img src="img/department/portfolio-img7.jpg" alt="portfolio img"></a>
                 </div>
                 <div class="col-md-12 col-sm-12">
                     <a rel="nofollow" href="index.jsp" class="btn btn-info">View More</a>
