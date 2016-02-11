@@ -68,10 +68,10 @@
       .activityImg:hover{
         width:250px;
         height:250px;
-        transform:rotate(360deg);
-        -moz-transform:rotate(360deg); /* Firefox 4 */
-        -webkit-transform:rotate(360deg); /* Safari and Chrome */
-        -o-transform:rotate(360deg); /* Opera */
+        transform:rotateX(360deg);
+        -moz-transform:rotateX(360deg); /* Firefox 4 */
+        -webkit-transform:rotateX(360deg); /* Safari and Chrome */
+        -o-transform:rotateX(360deg); /* Opera */
       }
 
     </style>

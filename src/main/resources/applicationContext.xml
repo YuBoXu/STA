@@ -46,6 +46,7 @@
        <context:component-scan base-package="dao"/>         <!--scan all component in dao package-->
        <context:component-scan base-package="domain"/>      <!--scan all component in domain package-->
        <context:spring-configured/>
+       <context:component-scan base-package="action"/>
        <tx:annotation-driven/>
        <cache:annotation-driven />
 
