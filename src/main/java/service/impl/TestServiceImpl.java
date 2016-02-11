@@ -10,7 +10,7 @@ import service.TestService;
  * Created by ZaraN on 2015/10/15.
  * test service impl
  */
-@Service("TestService")
+@Service
 public class TestServiceImpl implements TestService {
 
     @Autowired
