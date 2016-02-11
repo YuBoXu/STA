@@ -1,0 +1,110 @@
+.color-5300-1 {
+    background-color: #745F6E;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-2 {
+    background-color: #718C7D;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-3 {
+    background-color: #68AB82;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-4 {
+    background-color: #A2B98D;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-5 {
+    background-color: #C8CD97;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-6 {
+    background-color: #a13d63;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-7 {
+    background-color: #351e29;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-1:hover {
+    background-color: #43313d;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-2:hover {
+    background-color: #3d5045;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-3:hover {
+    background-color: #385d45;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-4:hover {
+    background-color: #697d5b;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-5:hover {
+    background-color: #737855;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+.color-5300-6:hover {
+    background-color: #713040;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
+
+.color-5300-7:hover {
+    background-color: #2b161f;
+    transition: background 0.5s;
+    -moz-transition: background 0.5s; /* Firefox 4 */
+    -webkit-transition: background 0.5s; /* Safari 和 Chrome */
+    -o-transition: background 0.5s; /* Opera */
+}
