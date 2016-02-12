@@ -79,12 +79,12 @@
         <div class="col-sm-1 color-5279-4 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=C">C++</a></div>
         <div class="col-sm-1 color-5279-5 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=汇编语言">汇编语言</a></div>
         <div class="col-sm-1 color-5300-5 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=数据库系统">数据库系统</a></div>
-        <div class="col-sm-1 color-5300-4 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=数据结构">数据结构</a></div>
-        <div class="col-sm-1 color-5300-3 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=高数">高数</a></div>
-        <div class="col-sm-1 color-5300-2 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=计算机网络">计算机网络</a></div>
-        <div class="col-sm-1 color-5300-1 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件架构">软件架构</a></div>
-        <div class="col-sm-1 color-5300-6 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件测试">软件测试</a></div>
-        <div class="col-sm-1 color-5300-7 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=SOA">SOA</a></div>
+        <div style="background: #99ff81" class="col-sm-1 color-5300-4 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=数据结构">数据结构</a></div>
+        <div style="background: #bdff93" class="col-sm-1 color-5300-3 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=高数">高数</a></div>
+        <div style="background: #d7ff89" class="col-sm-1 color-5300-2 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=计算机网络">计算机网络</a></div>
+        <div style="background: #fff37b" class="col-sm-1 color-5300-1 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件架构">软件架构</a></div>
+        <div style="background: #ffc69c" class="col-sm-1 color-5300-6 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件测试">软件测试</a></div>
+        <div style="background: #ffa9a7" class="col-sm-1 color-5300-7 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=SOA">SOA</a></div>
     </div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3" style="padding-top: 1vh">
@@ -110,7 +110,7 @@
                     <th>资源下载次数</th>
                     <th>资源简介</th>
                     <th>最后修改时间</th>
-                    <th>下载地址</th>
+                    <th style="text-align: center">下载地址</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -125,8 +125,13 @@
                                 <td>${resource.name}</td>
                                 <td>${resource.size}</td>
                                 <td>${resource.downloadTimes}</td>
-                                <td>${resource.introduce}</td>
-                                <td>${resource.time}</td>
+                                <td>
+                                    <span
+                                            data-am-popover="{theme: 'success sm', content: '${resource.introduce}', trigger: 'hover focus'}">
+                                        查看简介
+                                    </span>
+                                </td>
+                                <td name="lastTime">${resource.time}</td>
                                 <td><a href="javascript:download('${resource.id}')">下载</a></td>
                             </tr>
                         </c:forEach>
@@ -170,6 +175,9 @@
     </div>
 </div>
 <script>
+
+    var time = $("[name='lastTime']").text();
+
     $("#searchBtn").click(function sayHello() {
         var key = $("#keyInput").val().trim();
         var url = "retriveResourceByPage?targetPage=1&key=" + key;
