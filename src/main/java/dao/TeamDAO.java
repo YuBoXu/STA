@@ -47,27 +47,40 @@ public interface TeamDAO {
     public void delete(Team team);
 
 
-    /**分页查找团队信息
+    /**
+     * 分页查找团队信息
+     *
      * @param number
      * @return
      */
     public List<Team> retriveByPageNumber(int number);
 
 
-    /**查询所有记录的个数
+    /**
+     * 查询所有记录的个数
+     *
      * @return
      */
     public int retriveCounts();
 
-    /**查询分页之后总页数
+    /**
+     * 查询分页之后总页数
+     *
      * @return
      */
     public int retrivePageNumber();
 
-    /**根据id查询团队信息
+    /**
+     * 根据id查询团队信息
+     *
      * @param id
      * @return
      */
     public Team retriveById(int id);
 
+    /**根据用户id查询该用户发起的组队信息
+     * @param personId
+     * @return
+     */
+    public List<Team> retriveRelesasedTeamsById(int personId);
 }

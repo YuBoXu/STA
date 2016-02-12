@@ -18,7 +18,7 @@ public class ResourceDaoHibernate4 extends BaseDaoHibernate4<Resource> implement
     private int pageSize;
 
     public ResourceDaoHibernate4() {
-        pageSize = ConstantUtil.NMBER_OF_RECORDS_IN_RESOURCE;
+        pageSize = ConstantUtil.NUMBER_OF_RECORDS_IN_RESOURCE;
     }
 
     @Override

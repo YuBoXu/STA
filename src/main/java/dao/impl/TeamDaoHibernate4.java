@@ -19,7 +19,7 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
 
     /*初始化groupList每页显示的记录的个数*/
     public TeamDaoHibernate4() {
-        pageSize = ConstantUtil.NMBER_OF_RECORDS_IN_GROUPLIST;
+        pageSize = ConstantUtil.NUMBER_OF_RECORDS_IN_GROUPLIST;
     }
 
     @Override
@@ -88,5 +88,14 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
     @Override
     public Team retriveById(int id) {
         return super.get(Team.class,id);
+    }
+
+    @Override
+    public List<Team> retriveRelesasedTeamsById(int personId) {
+        Session session = getSessionFactory().openSession();
+        Query query = session.createQuery("from Team where ministerId = ? order by id desc");
+        query.setInteger(0,personId);
+        List<Team> teams = query.list();
+        return teams;
     }
 }

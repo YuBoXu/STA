@@ -103,7 +103,7 @@ public class TeamServiceImpl implements TeamService {
                 reason = "您已经是该团队的成员，无须再申请！";
             } else {
                 applyStatus = "success";
-                JoinGroup(team,person);
+                JoinGroup(team, person);
                 reason = "等待队长通过审核！";
             }
 
@@ -116,6 +116,17 @@ public class TeamServiceImpl implements TeamService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<Team> retriveRelesasedTeamsById(int personId) {
+
+        return teamDao.retriveRelesasedTeamsById(personId);
+    }
+
+    @Override
+    public Team retriveById(int id) {
+        return teamDao.retriveById(id);
     }
 
     /**
@@ -132,13 +143,34 @@ public class TeamServiceImpl implements TeamService {
         return false;
     }
 
-    /**加入团队
+    /**
+     * 加入团队
+     *
      * @param team
      * @param person
      */
-    public void JoinGroup(Team team,Person person){
-        team.setCurrentSize(team.getCurrentSize()+1);
+    public void JoinGroup(Team team, Person person) {
+        team.setCurrentSize(team.getCurrentSize() + 1);
         teamDao.update(team);
-        personTeamMapping.addMapping(team,person);
+        personTeamMapping.addMapping(team, person);
     }
+
+
+    /**
+     * 将用户请出团队
+     *
+     * @param teamId
+     * @param personId
+     */
+    public void getRidOfGroup(int teamId, int personId) {
+        Person person = personDao.retriveById(personId);
+        Team team = teamDao.retriveById(teamId);
+        personTeamMapping.deleteMapping(team, person);
+    }
+
+    @Override
+    public void removeTeam(int teamId) {
+        teamDao.delete(teamDao.retriveById(teamId));
+    }
+
 }

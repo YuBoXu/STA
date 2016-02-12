@@ -45,25 +45,61 @@ public interface TeamService {
      */
     public int retriveCounts();
 
-    /**查询分页之后总页数
+    /**
+     * 查询分页之后总页数
+     *
      * @return
      */
     public int retrivePageNumber();
 
-    /**计算开始与结束页的位置
+    /**
+     * 计算开始与结束页的位置
+     *
      * @return
      */
-    public Map<String,Integer> getStartAndEnd(int targetPage,int pageNumber);
+    public Map<String, Integer> getStartAndEnd(int targetPage, int pageNumber);
 
-    /**用户申请加入团队，判断是否准许该用户加入团队，
+    /**
+     * 用户申请加入团队，判断是否准许该用户加入团队，
      * 1、用户为该队队长，则不允许加入该团队
      * 2、用户为该队队员，则不允许加入团队
      * 3、团队成员数量已经到达最大上限
      * 4、组队信息已经超过截止日期
      * 返回的是json字符串
+     *
      * @param groupId
      * @param personId
      * @return
      */
-    public String applyToJoinGroup(int groupId,int personId);
+    public String applyToJoinGroup(int groupId, int personId);
+
+    /**
+     * 查询用户发起的组队信息
+     *
+     * @param personId
+     * @return
+     */
+    public List<Team> retriveRelesasedTeamsById(int personId);
+
+    /**
+     * 根据团队id查找团队信息
+     *
+     * @param id
+     * @return
+     */
+    public Team retriveById(int id);
+
+
+    /**
+     * 将用户请出团队
+     *
+     * @param teamId
+     * @param personId
+     */
+    public void getRidOfGroup(int teamId, int personId);
+
+    /**解散团队
+     * @param teamId
+     */
+    public void removeTeam(int teamId);
 }

@@ -36,7 +36,7 @@
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#">1. 主席团</a></li>
-                    <li><a href="#">2. 综合事务部</a></li>
+                    <li><a href="zong.jsp">2. 综合事务部</a></li>
                     <li><a href="#">3. 技术交流与推广部</a></li>
                     <li><a href="#">4. 赛事部</a></li>
                     <li><a href="#">5. 项目部</a></li>

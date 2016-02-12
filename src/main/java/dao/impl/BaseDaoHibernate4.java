@@ -45,7 +45,10 @@ public class BaseDaoHibernate4<T> implements BaseDao<T> {
     }
 
     public void delete(T entity) {
-        getSessionFactory().getCurrentSession().delete(entity);
+        Session session = getSessionFactory().openSession();
+        Transaction transaction =session.beginTransaction();
+        session.delete(session.merge(entity));
+        transaction.commit();
     }
 
     public void delete(Class<T> entityClazz, Serializable id) {

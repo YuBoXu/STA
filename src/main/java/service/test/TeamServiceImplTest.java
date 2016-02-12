@@ -1,8 +1,11 @@
 package service.test;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import domain.Person;
 import domain.Team;
 import junit.framework.TestCase;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
@@ -14,8 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import service.PersonService;
 import service.TeamService;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
@@ -44,7 +46,7 @@ public class TeamServiceImplTest extends TestCase {
 
     @Test
     public void testAdd() throws Exception {
-            for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 10; i++) {
 
             Person minister = personService.retriveByAccount("zhangsan");
 
@@ -73,28 +75,64 @@ public class TeamServiceImplTest extends TestCase {
     }
 
     @Test
-    public void test(){
+    public void test() {
 
         int targetPage = 5;
         int pageNumber = 10;
 
-        int start = targetPage-2;
-        int end = targetPage+2;
+        int start = targetPage - 2;
+        int end = targetPage + 2;
 
-        if (pageNumber>5){
-            while (start<1) {
+        if (pageNumber > 5) {
+            while (start < 1) {
                 start++;
                 end++;
             }
-            while (end>pageNumber){
+            while (end > pageNumber) {
                 start--;
                 end--;
             }
-        }
-        else {
+        } else {
             start = 1;
             end = pageNumber;
         }
+    }
+
+    @Test
+    public void testRetriveRelesasedTeamsById() throws Exception {
+        List<Team> teams = teamService.retriveRelesasedTeamsById(Integer.parseInt("4"));
+        for (Team team : teams) {
+            System.out.println(team.toString());
+        }
+    }
+
+    @Test
+    public void testJson() {
+        Team team = teamService.retriveById(Integer.parseInt("133"));
+        Set<Person> groupDetail = (Set<Person>) team.getPersonList();
+
+        List<Person> personIdANdName = new ArrayList<Person>();
+        for (Person person1:groupDetail){
+            Person person2 = new Person();person2.setId(person1.getId());
+            person2.setName(person1.getName());
+            personIdANdName.add(person2);
+        }
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("personIdANdName",personIdANdName);
+
+        System.out.println(jsonObject.toString());
+
+    }
+
+    @Test
+    public void testGetRidOfTeam(){
+        teamService.getRidOfGroup(1,3);
+    }
+
+    @Test
+    public void testRemoveTeam(){
+        teamService.removeTeam(1);
     }
 
 }
