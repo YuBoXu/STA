@@ -59,10 +59,22 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
     public List<Team> retriveByPageNumber(int number) {
         Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Team order by id desc");
-        query.setFirstResult((number-1)*pageSize);
+        query.setFirstResult((number - 1) * pageSize);
         query.setMaxResults(pageSize);
         List<Team> teams = query.list();
         return teams;
+    }
+
+    @Override
+    public List<Team> retriveByPageAndKey(int number, String key) {
+
+        Session session = getSessionFactory().openSession();
+        Query query = session.createQuery("from Team where name like ? order by id desc");
+        query.setString(0, "%" + key + "%");
+        query.setFirstResult((number - 1) * pageSize);
+        query.setMaxResults(pageSize);
+
+        return query.list();
     }
 
     @Override
@@ -78,6 +90,16 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
     @Override
     public int retrivePageNumber() {
         int count = retriveCounts();
+        int pagenumber = (count / pageSize);
+        if (count % pageSize != 0 && count > 0) {
+            pagenumber++;
+        }
+        return pagenumber;
+    }
+
+    @Override
+    public int retrivePageNumberByKey(String key) {
+        int count = retriveCountsByKey(key);
         int pagenumber = (count/pageSize);
         if (count%pageSize != 0 && count > 0){
             pagenumber ++;
@@ -86,15 +108,25 @@ public class TeamDaoHibernate4 extends BaseDaoHibernate4<Team> implements TeamDA
     }
 
     @Override
+    public int retriveCountsByKey(String key) {
+
+        Session session = getSessionFactory().openSession();
+        Query query = session.createQuery("select count(id) from Team where name like ?");
+        query.setString(0, "%" + key + "%");
+        int result = Integer.parseInt(query.uniqueResult().toString());
+        return result;
+    }
+
+    @Override
     public Team retriveById(int id) {
-        return super.get(Team.class,id);
+        return super.get(Team.class, id);
     }
 
     @Override
     public List<Team> retriveRelesasedTeamsById(int personId) {
         Session session = getSessionFactory().openSession();
         Query query = session.createQuery("from Team where ministerId = ? order by id desc");
-        query.setInteger(0,personId);
+        query.setInteger(0, personId);
         List<Team> teams = query.list();
         return teams;
     }

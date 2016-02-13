@@ -73,9 +73,18 @@ public class TeamAction extends ActionSupport implements ServletRequestAware, Se
             @Result(name = ActionSupport.SUCCESS, location = "/groupList.jsp")})
     public String retriveTeamByPage() throws Exception {
 
+        List<Team> teams;
+        int pageNumber;
         String targetPage = request.getParameter("targetPage");
-        int pageNumber = teamService.retrivePageNumber();
-        List<Team> teams = teamService.retriveByPageNumber(targetPage);
+        String key = request.getParameter("key");
+
+        if (key != null && !key.equals("")) {
+            teams = teamService.retriveByPageAndKey(Integer.parseInt(targetPage), key);
+            pageNumber = teamService.retrivePageNumberByKey(key);
+        } else {
+            teams = teamService.retriveByPageNumber(targetPage);
+            pageNumber = teamService.retrivePageNumber();
+        }
         if (teams.size() > 0) {
 
             List<Person> ministers = new ArrayList<Person>();
@@ -90,6 +99,7 @@ public class TeamAction extends ActionSupport implements ServletRequestAware, Se
             session.put("targetPage", targetPage);//目标页的号码
             session.put("pageNumber", pageNumber);//总页数
             session.put("teams", teams);//团队信息数组
+            session.put("key", key);//将搜索关键字放回回话中去
             session.put("retriveStatus", "success");//查询结果
         } else {
             session.put("retriveStatus", "fail");//查询结果
@@ -141,14 +151,13 @@ public class TeamAction extends ActionSupport implements ServletRequestAware, Se
 
         String groupId = request.getParameter("groupId");
         Person person = (Person) session.get("person");
-        String msg = teamService.applyToJoinGroup(Integer.parseInt(groupId),person.getId());
-        if (msg == null){
+        String msg = teamService.applyToJoinGroup(Integer.parseInt(groupId), person.getId());
+        if (msg == null) {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("applyStatus", "fail");
             jsonObject.put("reason", "");
             response.getWriter().write(jsonObject.toString());
-        }
-        else response.getWriter().write(msg);
+        } else response.getWriter().write(msg);
     }
 
 }

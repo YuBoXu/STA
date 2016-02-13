@@ -173,4 +173,14 @@ public class TeamServiceImpl implements TeamService {
         teamDao.delete(teamDao.retriveById(teamId));
     }
 
+    @Override
+    public List<Team> retriveByPageAndKey(int targetPage, String key) {
+        return teamDao.retriveByPageAndKey(targetPage, key);
+    }
+
+    @Override
+    public int retrivePageNumberByKey(String key) {
+        return teamDao.retrivePageNumberByKey(key);
+    }
+
 }

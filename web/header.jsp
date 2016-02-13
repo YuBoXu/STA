@@ -42,7 +42,7 @@
                     <li><a href="#">5. 项目部</a></li>
                     <li><a href="#">6. 公共关系部</a></li>
                     <li><a href="#">7. 创新创业项目管理中心</a></li>
-                    <li><a href="#">8. 研发中心</a></li>
+                    <li><a href="department.jsp">8. 研发中心</a></li>
                 </ul>
             </li>
         </ul>

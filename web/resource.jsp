@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="frame/bootstrap-3.3.4-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/color-5279.css">
     <link rel="stylesheet" href="css/color-5300.css">
+    <link rel="stylesheet" href="css/color-0000.css">
     <style>
         .font-small * {
             font-size: small;
@@ -79,12 +80,12 @@
         <div class="col-sm-1 color-5279-4 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=C">C++</a></div>
         <div class="col-sm-1 color-5279-5 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=汇编语言">汇编语言</a></div>
         <div class="col-sm-1 color-5300-5 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=数据库系统">数据库系统</a></div>
-        <div style="background: #99ff81" class="col-sm-1 color-5300-4 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=数据结构">数据结构</a></div>
-        <div style="background: #bdff93" class="col-sm-1 color-5300-3 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=高数">高数</a></div>
-        <div style="background: #d7ff89" class="col-sm-1 color-5300-2 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=计算机网络">计算机网络</a></div>
-        <div style="background: #fff37b" class="col-sm-1 color-5300-1 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件架构">软件架构</a></div>
-        <div style="background: #ffc69c" class="col-sm-1 color-5300-6 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件测试">软件测试</a></div>
-        <div style="background: #ffa9a7" class="col-sm-1 color-5300-7 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=SOA">SOA</a></div>
+        <div class="col-sm-1 color-0000-1 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=数据结构">数据结构</a></div>
+        <div class="col-sm-1 color-0000-2 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=高数">高数</a></div>
+        <div class="col-sm-1 color-0000-3 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=计算机网络">计算机网络</a></div>
+        <div class="col-sm-1 color-0000-4 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件架构">软件架构</a></div>
+        <div class="col-sm-1 color-0000-5 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=软件测试">软件测试</a></div>
+        <div class="col-sm-1 color-0000-6 quickSearch"><a href="retriveResourceByPage?targetPage=1&key=SOA">SOA</a></div>
     </div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3" style="padding-top: 1vh">

@@ -57,6 +57,15 @@ public interface TeamDAO {
 
 
     /**
+     * 根据页数以及团队关键字查找团队信息
+     *
+     * @param number
+     * @param key
+     * @return
+     */
+    public List<Team> retriveByPageAndKey(int number, String key);
+
+    /**
      * 查询所有记录的个数
      *
      * @return
@@ -71,6 +80,19 @@ public interface TeamDAO {
     public int retrivePageNumber();
 
     /**
+     * 根据关键字查询团队信息的总页数
+     *
+     * @return
+     */
+    public int retrivePageNumberByKey(String key);
+
+    /**根据关键字查询团队信息结果的总个数
+     * @param key
+     * @return
+     */
+    public int retriveCountsByKey(String key);
+
+    /**
      * 根据id查询团队信息
      *
      * @param id
@@ -78,7 +100,9 @@ public interface TeamDAO {
      */
     public Team retriveById(int id);
 
-    /**根据用户id查询该用户发起的组队信息
+    /**
+     * 根据用户id查询该用户发起的组队信息
+     *
      * @param personId
      * @return
      */

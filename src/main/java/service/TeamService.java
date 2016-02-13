@@ -98,8 +98,26 @@ public interface TeamService {
      */
     public void getRidOfGroup(int teamId, int personId);
 
-    /**解散团队
+    /**
+     * 解散团队
+     *
      * @param teamId
      */
     public void removeTeam(int teamId);
+
+    /**
+     * 根据关键字分页查询团队信息
+     *
+     * @param targetPage
+     * @param key
+     * @return
+     */
+    public List<Team> retriveByPageAndKey(int targetPage, String key);
+
+    /**根据关键字查询查询结果的总页数
+     * @param key
+     * @return
+     */
+    public int retrivePageNumberByKey(String key);
+
 }

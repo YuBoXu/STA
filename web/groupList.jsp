@@ -33,7 +33,6 @@
             text-align: center;
             line-height: 5vh;
         }
-
     </style>
 </head>
 <body>
@@ -43,9 +42,10 @@
 <div style="text-align: center;margin-top: 20px;margin-left: 10vw;margin-right: 10vw">
     <form class="am-form-inline" role="form">
         <div class="am-form-group">
-            <input type="text" class="am-form-field button-block" placeholder="团队关键字……">
+            <input type="text" class="am-form-field button-block" placeholder="团队关键字……" id="searchKey"
+                   value="${sessionScope.key}">
         </div>
-        <a class="button button-royal button-rounded">搜索团队</a>
+        <a class="button button-royal button-rounded" href="javascript:retriveBykey()">搜索团队</a>
     </form>
     <table class="am-table am-table-striped am-table-hover">
         <thead>
@@ -87,7 +87,7 @@
         <c:if test="${status.index==sessionScope.targetPage}">
                 class="am-active"
         </c:if>
-                ><a href="retriveTeamByPage?targetPage=${status.index}">${status.index}
+                ><a href="retriveTeamByPage?targetPage=${status.index}&key=${sessionScope.key}">${status.index}
             </c:forEach>
             <li><a href="javascript:nextPage()">&raquo;</a></li>
             <li>共${sessionScope.pageNumber}页，跳转到<input id="page" type="text"
@@ -101,7 +101,7 @@
 </div>
 
 
-<div class="am-popup" id="information" style="height: auto">
+<%--<div class="am-popup" id="information" style="height: auto">
     <div class="am-popup-inner">
         <div class="am-popup-hd">
             <h4 class="am-popup-title">title</h4>
@@ -129,6 +129,53 @@
             <span id="applyToJoinGroup" class="am-modal-btn" data-am-modal-confirm>申请</span>
         </div>
     </div>
+</div>--%>
+
+<div class="am-modal am-modal-confirm" tabindex="-1" id="groupDetailMsg">
+    <div class="am-modal-dialog">
+        <center>
+            <h3>团队详细信息</h3>
+            <table class="am-table am-table-hover" style="width: 90%">
+                <tbody>
+                <tr>
+                    <td>团队名称：</td>
+                    <td><span id="title"></span></td>
+                </tr>
+                <tr>
+                    <td>发起人：</td>
+                    <td><span id="leader"></span></td>
+                </tr>
+                <tr>
+                    <td>现有人数：</td>
+                    <td><span id="nowNum"></span></td>
+                </tr>
+                <tr>
+                    <td>还需人数：</td>
+                    <td><span id="needNum"></span></td>
+                </tr>
+                <tr>
+                    <td>发布日期：</td>
+                    <td><span id="publishTime"></span></td>
+                </tr>
+                <tr>
+                    <td>截止日期：</td>
+                    <td><span id="deadline"></span></td>
+                </tr>
+                <tr>
+                    <td>详细说明：</td>
+                    <td><span id="introduce"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <h6 style="color: #6cd86b">
+                您想要加入该团队吗？
+            </h6>
+        </center>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm id="applyToJoinGroup">确定</span>
+        </div>
+    </div>
 </div>
 
 </body>
@@ -143,28 +190,56 @@
         $("#deadline").text(dateLine);
         $("#introduce").text(introduce);
         selectGroupId = GroupId;
+
+        $('#groupDetailMsg').modal({});
+
     }
 
     $("#changePage").click(function () {
         var targetPage = $("#page").val().trim();
         var pageNumber = ${sessionScope.pageNumber};
-        if (targetPage <= pageNumber && targetPage > 0)
-            window.location.href = "retriveTeamByPage?targetPage=" + targetPage;
+        if (targetPage <= pageNumber && targetPage > 0) {
+            var url = "retriveTeamByPage?targetPage=" + targetPage;
+            if (${sessionScope.key!=null}) {
+                url += "&key=${sessionScope.key}";
+            }
+            window.location.href = url;
+        }
         else
             alert("输入不合法！");
     });
 
     function previousPage() {
         if ((<s:property value="#session.targetPage"/>) <= 1) {
-            window.location.href = "retriveTeamByPage?targetPage=" + 1;
+            var url = "retriveTeamByPage?targetPage=" + 1;
+            if (${sessionScope.key!=null}) {
+                url += "&key=${sessionScope.key}";
+            }
+            window.location.href = url;
         }
-        else window.location.href = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>-1);
+        else {
+            var url = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>-1);
+            if (${sessionScope.key!=null}) {
+                url += "&key=${sessionScope.key}";
+            }
+            window.location.href = url;
+        }
     }
     function nextPage() {
         if ((<s:property value="#session.targetPage"/>) >= (<s:property value="#session.pageNumber"/>)) {
-            window.location.href = "retriveTeamByPage?targetPage=" + <s:property value="#session.pageNumber"/>;
+            var url = "retriveTeamByPage?targetPage=" + <s:property value="#session.pageNumber"/>;
+            if (${sessionScope.key!=null}) {
+                url += "&key=${sessionScope.key}";
+            }
+            window.location.href = url;
         }
-        else window.location.href = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>+1);
+        else {
+            var url = "retriveTeamByPage?targetPage=" + (<s:property value="#session.targetPage"/>+1);
+            if (${sessionScope.key!=null}) {
+                url += "&key=${sessionScope.key}";
+            }
+            window.location.href = url;
+        }
     }
 
     function releaseGroupInfo() {
@@ -195,7 +270,7 @@
             success: function (result) {//返回数据根据结果进行相应的处理
 
                 if (result.applyStatus == 'success') {
-                    alert("申请成功，"+result.reason);
+                    alert("申请成功，" + result.reason);
                 }
                 else {
                     alert("申请失败，" + result.reason);
@@ -207,5 +282,12 @@
         });
 
     });
+    function retriveBykey() {
+        var url = "retriveTeamByPage?targetPage=1";
+        if ($("#searchKey").val().trim() != "") {
+            url += "&key=" + $("#searchKey").val();
+        }
+        window.location.href = url;
+    }
 </script>
 </html>
